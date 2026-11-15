@@ -35,7 +35,7 @@ A forma para investigar e abordar o problema se manteve em todos os testes, ente
 Todos os tests foram repetidos por pytest individualmente, para verificar, validação além de validações manuias como calculos matematicos.
 exemplo: -28 no calculo de noites, e impossivél alguem fazer uma reserva negativa, então após correção dados encontrados satisfarotios
 
-(.venv) PS C:\onfly-desafio> Get-Content output\report.json -Encoding UTF8
+```(.venv) PS C:\onfly-desafio> Get-Content output\report.json -Encoding UTF8
 {
   "report_version": "1.0",
   "generated_at": "2026-11-15T00:09:58-03:00",
@@ -124,18 +124,17 @@ exemplo: -28 no calculo de noites, e impossivél alguem fazer uma reserva negati
       "total_brl": "37455.69"
     }
   ]
-}
+}```
 
 
 
 ## 5. Resultado do pytest
-Exemplo de como era utilizado pytest em teste por teste individualmente
+Exemplo de como era utilizado ```pytest em teste por teste individualmente
 (.venv) PS C:\onfly-desafio> pytest tests/test_currency.py -q
 .                                                                                                                                                                            [100%]
-1 passed in 0.30s
+1 passed in 0.30s```
 
 **Resultados completos**
-(.venv) PS C:\onfly-desafio> pytest -q 
+```(.venv) PS C:\onfly-desafio> pytest -q 
 .....                                                                                                                                                                        [100%]
-5 passed in 0.69s
-(.venv) PS C:\onfly-desafio>
+5 passed in 0.69s```
