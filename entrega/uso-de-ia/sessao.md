@@ -10,7 +10,7 @@ Olá, Marcos! Briefing recebido e entendido. Resumindo:
 - **Seu perfil:** engenheiro de computação, com base em Java/OOP e projetos de portfólio em Spring Boot. Python e pytest são novidade, e você não tem nada instalado ainda.
 - **O desafio da Onfly:** achar e corrigir defeitos em um CLI Python que consolida reservas de hotel, até os testes fornecidos passarem, sem alterar esses testes.
 - **Nosso combinado:** você escreve o código e entende cada linha. Eu atuo como tech lead, mentor e professor: explico conceitos, dou exemplos pequenos e genéricos, comparo com Java, faço perguntas e dou dicas. Não entrego solução pronta. Se você pedir "faz pra mim", eu te lembro do combinado, porque a declaração de uso de IA precisa ser verdadeira e você precisa explicar cada decisão em entrevista.
-- **Entregáveis:** código corrigido com `pytest -q` passando, `README-ENTREGA.md`, sessão exportada e `declaracao.md` em `entrega/uso-de-ia/`, e repositório público no GitHub.
+- **Entregáveis:** código corrigido com `pytest -q` passando, `../README-ENTREGA.md`, sessão exportada e `uso_de_ia/declaracao.md` em `entrega/uso-de-ia/`, e repositório público no GitHub.
 
 ## Hoje é o Dia 1 de 4
 
@@ -40,12 +40,12 @@ Pois vamos mudar a abordagem cama criar um projeto igual a esse como um espelho 
 
 ### **Claude** (claude-sonnet-4-6) · 2026-11-12 09:47:11 UTC
 
-Sim, tenho tudo o que o enunciado descreve: regras de negócio, contrato do CLI, formato do JSON, ordenação, arredondamento e a amostra de validação. Não tenho os arquivos reais do projeto (`src/onfly_report/`, `tests/` e os CSVs), porque eles só chegam quando você baixar o desafio. Para o espelho isso não atrapalha, já que vamos criar os nossos próprios.
+Sim, tenho tudo o que o enunciado descreve: regras de negócio, contrato do CLI, formato do JSON, ordenação, arredondamento e a amostra de validação. Não tenho os arquivos reais do projeto (`../../src/onfly_report`, `tests/` e os CSVs), porque eles só chegam quando você baixar o desafio. Para o espelho isso não atrapalha, já que vamos criar os nossos próprios.
 
 **Como eu faria o espelho, passo a passo, como nos projetos Java:**
 
 1. **Ambiente:** instalar Python 3.11+, venv e pytest.
-2. **Projeto espelho:** criar as pastas e arquivos juntos, na mesma estrutura do desafio (`src/`, `tests/`, `data/`, `entrega/`).
+2. **Projeto espelho:** criar as pastas e arquivos juntos, na mesma estrutura do desafio (`../../src`, `tests/`, `data/`, `entrega/`).
 3. **Dados próprios:** montar um CSV pequeno de reservas e outro de câmbio, com casos de borda (virada de mês, cancelada, no-show, moeda estrangeira).
 4. **Construção em camadas, na ordem do enunciado:** ler, converter tipos, contar status, filtrar CONFIRMED, agregar e serializar. Você escreve cada parte e eu explico, comparando com Java.
 5. **Testes com pytest:** escrever um teste por regra, como faríamos com JUnit.
@@ -70,7 +70,7 @@ Boa notícia: você não precisa abrir o código do jeito complicado. Faça assi
 
 **Como me passar o código:**
 
-- **Melhor opção:** anexe os arquivos aqui no chat (clipe/"+" ao lado da caixa de mensagem). Pode anexar o próprio `.zip` ou os arquivos de `src/onfly_report/` e `tests/`.
+- **Melhor opção:** anexe os arquivos aqui no chat (clipe/"+" ao lado da caixa de mensagem). Pode anexar o próprio `.zip` ou os arquivos de `../../src/onfly_report` e `tests/`.
 - **Alternativa:** copie e cole o conteúdo de cada arquivo, informando o nome acima de cada trecho.
 
 Um ponto importante sobre o combinado: o código do desafio é onde moram os defeitos. Se você me mandar tudo agora, eu passo a saber onde estão os erros, e isso é útil para eu te guiar sem entregar a resposta. Mas continuo agindo como professor: aponto onde olhar e faço perguntas, e você descobre e corrige. A declaração de uso de IA fica verdadeira desse jeito.
@@ -143,7 +143,7 @@ Vamos lá, perguntas para entender melhor os conceitos. Pelo que eu vi sua expli
 
 ### **Claude** (claude-sonnet-4-6) · 2026-11-12 10:36:21 UTC
 
-Você ligou os pontos certo: o JSON do relatório é parecido com o JSON que a sua API de cadastro devolve. Só um ajuste: na API, o dado fica guardado no banco, e o JSON é o formato da **resposta** que o Controller monta para quem chamou. Aqui o JSON também é uma resposta, só que gravada num arquivo (`output/report.json`) em vez de enviada por HTTP.
+Você ligou os pontos certo: o JSON do relatório é parecido com o JSON que a sua API de cadastro devolve. Só um ajuste: na API, o dado fica guardado no banco, e o JSON é o formato da **resposta** que o Controller monta para quem chamou. Aqui o JSON também é uma resposta, só que gravada num arquivo (`../../output/report.json`) em vez de enviada por HTTP.
 
 Mapeando para o que você já conhece:
 
@@ -317,11 +317,11 @@ Os dois ficam em pastas separadas, para você nunca misturar o treino com a entr
 
 Anexe pelo "+" ao lado da caixa de mensagem. Pode ser o `.zip` inteiro ou, se preferir, estes itens:
 
-1. `README.md` (o enunciado oficial)
-2. Tudo de `src/onfly_report/`
-3. Tudo de `tests/`
-4. `pyproject.toml` e `requirements-dev.txt`
-5. As primeiras linhas dos CSVs de `data/` (basta o cabeçalho e umas 10 linhas de cada)
+1. `../../README.md` (o enunciado oficial)
+2. Tudo de `../../src/onfly_report`
+3. Tudo de `../../tests`
+4. `../../pyproject.toml` e `requirements-dev.txt`
+5. As primeiras linhas dos CSVs de `../../data` (basta o cabeçalho e umas 10 linhas de cada)
 
 Com isso eu leio o código e os testes, aprendo onde estão os pontos delicados e te conduzo sem te entregar as respostas. Para a investigação do desafio real, a regra de sempre vale: eu pergunto e aponto onde olhar, e você descobre e corrige.
 
@@ -349,7 +349,7 @@ Combinado, Marcos. Pode enviar um por um. Vou só receber e ler cada arquivo, se
 
 Quando acabar, escreva algo como "pronto, enviei tudo". Aí eu faço um inventário do que chegou (o que veio e o que falta) antes de começarmos o espelho.
 
-A ordem não importa, mas se puder, mande os testes (`tests/`) antes do código, porque são a especificação.
+A ordem não importa, mas se puder, mande os testes (`../../tests`) antes do código, porque são a especificação.
 
 ### **Marcos** · 2026-11-12 12:36:15 UTC
 
@@ -385,7 +385,7 @@ A pasta `data` chegou inteira, Marcos, e eu já li os três arquivos. Pelo combi
 | `exemplo-validacao.csv` | 12 reservas, a amostra com o resultado esperado do enunciado |
 | `reservas_hoteis.csv` | 300 reservas, o dataset real |
 
-Ainda não vi `src/onfly_report/`, `tests/`, `README.md`, `pyproject.toml` nem `requirements-dev.txt`. Para eu conseguir ler essas pastas direto do seu computador, é preciso adicionar também a pasta raiz `onfly-desafio`. Use "Add folder" no menu "+" ao lado da caixa de mensagem. Se preferir, pode anexar os arquivos aqui um por um, como combinamos.
+Ainda não vi `../../src/onfly_report`, `tests/`, `README.md`, `pyproject.toml` nem `requirements-dev.txt`. Para eu conseguir ler essas pastas direto do seu computador, é preciso adicionar também a pasta raiz `onfly-desafio`. Use "Add folder" no menu "+" ao lado da caixa de mensagem. Se preferir, pode anexar os arquivos aqui um por um, como combinamos.
 
 Pode mandar o resto. Quando terminar, escreva "pronto, enviei tudo".
 
@@ -399,9 +399,9 @@ pasta entrega
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-12 12:37:00 UTC
 
-Recebi a pasta `entrega`, Marcos. Ela só tem um `.gitkeep` vazio, que serve para o Git versionar uma pasta sem arquivos. É o esperado: os arquivos dessa pasta (`README-ENTREGA.md` e `uso-de-ia/`) serão criados por você no Dia 4.
+Recebi a pasta `entrega`, Marcos. Ela só tem um `.gitkeep` vazio, que serve para o Git versionar uma pasta sem arquivos. É o esperado: os arquivos dessa pasta (`../README-ENTREGA.md` e `uso-de-ia/`) serão criados por você no Dia 4.
 
-Até agora chegaram `data` e `entrega`. Faltam `src`, `tests` e os arquivos da raiz (`README.md`, `pyproject.toml`, `requirements-dev.txt`). Pode mandar o próximo e, quando terminar, escreva "pronto, enviei tudo".
+Até agora chegaram `data` e `entrega`. Faltam `src`, `tests` e os arquivos da raiz (`../../README.md`, `pyproject.toml`, `requirements-dev.txt`). Pode mandar o próximo e, quando terminar, escreva "pronto, enviei tudo".
 
 ### **Marcos** · 2026-11-12 12:37:25 UTC
 
@@ -415,7 +415,7 @@ pasta output
 
 Recebi a pasta `output`, Marcos. Também só tem um `.gitkeep` vazio, o que é normal: o `report.json` só aparece quando o CLI rodar.
 
-Chegaram `data`, `entrega` e `output`. Faltam `src`, `tests` e os arquivos da raiz (`README.md`, `pyproject.toml`, `requirements-dev.txt`). Pode mandar o próximo.
+Chegaram `data`, `entrega` e `output`. Faltam `src`, `tests` e os arquivos da raiz (`../../README.md`, `pyproject.toml`, `requirements-dev.txt`). Pode mandar o próximo.
 
 ### **Marcos** · 2026-11-12 12:37:44 UTC
 
@@ -431,12 +431,12 @@ Recebi a pasta `src`, Marcos, e li tudo: 15 arquivos em `onfly_report/`, com `re
 
 | Pasta ou arquivo | Situação |
 |---|---|
-| `data/` | recebido |
-| `entrega/` | recebido |
-| `output/` | recebido |
-| `src/` | recebido |
-| `tests/` | falta |
-| `README.md`, `pyproject.toml`, `requirements-dev.txt` | faltam, ficam na raiz `onfly-desafio` |
+| `../../data` | recebido |
+| `..` | recebido |
+| `../../output` | recebido |
+| `../../src` | recebido |
+| `../../tests` | falta |
+| `../../README.md`, `pyproject.toml`, `requirements-dev.txt` | faltam, ficam na raiz `onfly-desafio` |
 
 Mande a pasta `tests` em seguida, porque é a especificação e vamos ler primeiro. Para os três arquivos da raiz, anexe aqui no chat, já que conectar a raiz inteira também daria acesso a pastas que não precisamos. Quando terminar, escreva "pronto, enviei tudo".
 
@@ -454,9 +454,9 @@ Recebi a pasta `tests`, Marcos, e li os 6 arquivos. Sigo aguardando e não vou c
 
 | Pasta ou arquivo | Situação |
 |---|---|
-| `data/`, `entrega/`, `output/`, `src/` | recebidos |
-| `tests/` | recebido (`helpers.py` e 5 arquivos `test_*.py`) |
-| `README.md`, `pyproject.toml`, `requirements-dev.txt` | faltam, ficam na raiz `onfly-desafio` |
+| `../../data`, `entrega/`, `output/`, `src/` | recebidos |
+| `../../tests` | recebido (`helpers.py` e 5 arquivos `test_*.py`) |
+| `../../README.md`, `pyproject.toml`, `requirements-dev.txt` | faltam, ficam na raiz `onfly-desafio` |
 
 Pode mandar o resto. Quando terminar, escreva "pronto, enviei tudo".
 
@@ -470,11 +470,11 @@ Inventário completo, Marcos. Chegou tudo:
 
 | Item | Situação |
 |---|---|
-| `data/` (3 CSVs), `entrega/`, `output/` | ok |
-| `src/onfly_report/` (15 arquivos) | ok |
-| `tests/` (`helpers.py` e 5 arquivos `test_*.py`) | ok |
-| `README.md`, `pyproject.toml`, `requirements-dev.txt` | ok |
-| `requirements.txt`, `.gitignore` | ok (extras) |
+| `../../data` (3 CSVs), `entrega/`, `output/` | ok |
+| `../../src/onfly_report` (15 arquivos) | ok |
+| `../../tests` (`helpers.py` e 5 arquivos `test_*.py`) | ok |
+| `../../README.md`, `pyproject.toml`, `requirements-dev.txt` | ok |
+| `../../requirements.txt`, `.gitignore` | ok (extras) |
 
 Li tudo, e agora sei onde estão os pontos delicados. Não vou apontar nenhum agora, porque a caça aos defeitos é do projeto real e você descobre cada um por perguntas minhas, não por resposta pronta. Antes disso, vamos treinar no espelho.
 
@@ -632,7 +632,7 @@ Se funcionar, o início da linha do terminal passa a mostrar `(.venv)`. Se o Pow
 2. Se a pasta `.venv` apareceu.
 3. Se o `(.venv)` aparece no início da linha do terminal depois de ativar. Se aparecer erro, copie e cole a mensagem inteira.
 
-Pergunta para você pensar, sem pressa: no Java, o que `.gitignore` costuma ignorar da pasta de dependências ou de build? Veja o `.gitignore` do desafio, que já tem `.venv/` listado, e me diga por que você acha que essa pasta não deve ir para o GitHub.
+Pergunta para você pensar, sem pressa: no Java, o que `../../.gitignore` costuma ignorar da pasta de dependências ou de build? Veja o `.gitignore` do desafio, que já tem `.venv/` listado, e me diga por que você acha que essa pasta não deve ir para o GitHub.
 
 ### **Marcos** · 2026-11-12 14:35:41 UTC
 
@@ -838,7 +838,7 @@ Funcionou, Marcos! O `(.venc)` no início da linha prova que o ambiente virtual 
 
 ## Por que vale renomear mesmo assim
 
-O `.gitignore` do desafio ignora `.venv/`, e não `.venc/`. No projeto real, um venv com outro nome iria para o GitHub, com milhares de arquivos. Como o espelho é treino, vamos criar o hábito certo agora.
+O `../../.gitignore` do desafio ignora `.venv/`, e não `.venc/`. No projeto real, um venv com outro nome iria para o GitHub, com milhares de arquivos. Como o espelho é treino, vamos criar o hábito certo agora.
 
 ## Refazer com o nome certo
 
@@ -906,7 +906,7 @@ O venv cria uma **cópia isolada do ambiente Python dentro da pasta do projeto**
 
 | Java | Python |
 |---|---|
-| `pom.xml` ou `build.gradle` declara as dependências | `requirements-dev.txt` declara as dependências |
+| `pom.xml` ou `build.gradle` declara as dependências | `../../requirements-dev.txt` declara as dependências |
 | Maven/Gradle baixa e resolve | `pip install -r requirements-dev.txt` baixa |
 | Isolamento por projeto via classpath | Isolamento por projeto via **venv** |
 
@@ -914,13 +914,13 @@ A diferença é que, no Java, o isolamento vem embutido na ferramenta de build. 
 
 ## Por que isso importa no desafio
 
-O `README` pede exatamente isto: `python3.11 -m venv .venv`, ativar e `pip install -r requirements-dev.txt`. Quem avaliar seu projeto vai repetir esses passos do zero. Se o venv e o `requirements-dev.txt` estiverem certos, o projeto roda na máquina dele igual à sua.
+O `README` pede exatamente isto: `python3.11 -m venv .venv`, ativar e `pip install -r requirements-dev.txt`. Quem avaliar seu projeto vai repetir esses passos do zero. Se o venv e o `../../requirements-dev.txt` estiverem certos, o projeto roda na máquina dele igual à sua.
 
-Por isso a pasta `.venv/` fica no `.gitignore`: ela é só o ambiente local, e o `requirements-dev.txt` já diz o que instalar para reconstruí-la.
+Por isso a pasta `../../.venv` fica no `.gitignore`: ela é só o ambiente local, e o `requirements-dev.txt` já diz o que instalar para reconstruí-la.
 
 ## Pergunta para fixar
 
-Com suas palavras: por que a pasta `.venv` não precisa ir para o GitHub, mas o `requirements-dev.txt` precisa?
+Com suas palavras: por que a pasta `.venv` não precisa ir para o GitHub, mas o `../../requirements-dev.txt` precisa?
 
 Quando responder, seguimos com a criação do `.venv` e a instalação do pytest.
 
@@ -930,10 +930,10 @@ a pasta .venv guarda as bibliotecas expecificas do projeto, na versão do comput
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-12 14:44:52 UTC
 
-Quase, Marcos, e a parte principal está certa: a `.venv` guarda as bibliotecas do projeto, e o `requirements-dev.txt` diz quais são e em que versão. Dois ajustes:
+Quase, Marcos, e a parte principal está certa: a `.venv` guarda as bibliotecas do projeto, e o `../../requirements-dev.txt` diz quais são e em que versão. Dois ajustes:
 
-1. **"Na versão do computador"** não é bem isso. As versões das bibliotecas não vêm do seu computador: vêm do que o `requirements-dev.txt` manda instalar. Olhe o do desafio: `pytest==8.3.4` e `ruff==0.8.4`. O `==` trava a versão exata, então todo mundo instala as mesmas.
-2. **O motivo de a `.venv` ficar fora do GitHub** é que ela é **gerada** e **específica da sua máquina**. Guarda caminhos do seu Windows, pesa muito e pode ser recriada a qualquer momento com um comando. O `requirements-dev.txt` é a **receita**, pequeno e igual para todos. No Java, a mesma lógica vale: você versiona o `pom.xml`, e não a pasta `target/` nem o `~/.m2`.
+1. **"Na versão do computador"** não é bem isso. As versões das bibliotecas não vêm do seu computador: vêm do que o `../../requirements-dev.txt` manda instalar. Olhe o do desafio: `pytest==8.3.4` e `ruff==0.8.4`. O `==` trava a versão exata, então todo mundo instala as mesmas.
+2. **O motivo de a `.venv` ficar fora do GitHub** é que ela é **gerada** e **específica da sua máquina**. Guarda caminhos do seu Windows, pesa muito e pode ser recriada a qualquer momento com um comando. O `../../requirements-dev.txt` é a **receita**, pequeno e igual para todos. No Java, a mesma lógica vale: você versiona o `pom.xml`, e não a pasta `target/` nem o `~/.m2`.
 
 Resumo em uma frase: **a receita vai para o GitHub, e o ambiente pronto não.**
 
@@ -1037,7 +1037,7 @@ Successfully installed colorama-0.4.6 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.
 Instalou sem erro, Marcos. Dois pontos sobre essa saída:
 
 1. **O aviso `[notice] A new release of pip is available`** é só um lembrete de atualização, e dá para ignorar.
-2. **Olhe a versão instalada: `pytest-9.2.0`.** O `requirements-dev.txt` do desafio manda instalar `pytest==8.3.4`. Eu pedi `pip install pytest` sem versão, então ele pegou a mais recente. É por isso que o `==` existe: ele trava a versão para todos terem o mesmo comportamento. No espelho não tem problema, mas no projeto real vamos instalar pelo arquivo (`pip install -r requirements-dev.txt`).
+2. **Olhe a versão instalada: `pytest-9.2.0`.** O `../../requirements-dev.txt` do desafio manda instalar `pytest==8.3.4`. Eu pedi `pip install pytest` sem versão, então ele pegou a mais recente. É por isso que o `==` existe: ele trava a versão para todos terem o mesmo comportamento. No espelho não tem problema, mas no projeto real vamos instalar pelo arquivo (`pip install -r requirements-dev.txt`).
 
 Confirme que o pytest ficou disponível:
 
@@ -1103,7 +1103,7 @@ Antes de abrir o editor, uma pergunta: **por que os dados de treino precisam ter
 
 ### Passo 3: escrever o CSV de câmbio
 
-Em `data/`, crie `taxas_cambio.csv`. Ele tem duas colunas, `currency` e `rate_to_brl`, e três moedas: BRL, USD e EUR. **Use taxas diferentes das do desafio**, para os números do espelho não serem os mesmos. Por exemplo, em vez de 5.42, escolha o valor que quiser. Escreva você mesmo.
+Em `../../data`, crie `taxas_cambio.csv`. Ele tem duas colunas, `currency` e `rate_to_brl`, e três moedas: BRL, USD e EUR. **Use taxas diferentes das do desafio**, para os números do espelho não serem os mesmos. Por exemplo, em vez de 5.42, escolha o valor que quiser. Escreva você mesmo.
 
 ### Passo 4: planejar o CSV de reservas
 
@@ -1191,7 +1191,7 @@ vamos escrever linha por linha junto, vamos crirar um projeto espelho ao projeto
 
 Combinado, Marcos: vamos construir o espelho juntos, linha por linha, com uma aplicação do mesmo formato da original. Eu explico cada linha e você digita.
 
-Um ponto de honestidade para guardar: o espelho será a versão **correta**. Quando abrirmos o projeto real, a investigação dos defeitos tem que partir dos **testes que falham** e dos sintomas, e não de uma comparação de código com o espelho. O `README-ENTREGA.md` e a declaração vão contar isso como foi.
+Um ponto de honestidade para guardar: o espelho será a versão **correta**. Quando abrirmos o projeto real, a investigação dos defeitos tem que partir dos **testes que falham** e dos sintomas, e não de uma comparação de código com o espelho. O `../README-ENTREGA.md` e a declaração vão contar isso como foi.
 
 ## Sprint do espelho, cartão 1: esqueleto do pacote
 
@@ -1212,7 +1212,7 @@ Mais as pastas `data`, `tests`, `entrega` e `output`, se ainda não existirem. P
 
 No Java, uma pasta de classes vira um **package**. No Python, uma pasta vira um **pacote** quando tem um arquivo chamado `__init__.py` dentro. É ele que diz ao Python: "esta pasta é importável".
 
-Crie `src/onfly_report/__init__.py` (*New → Python File*, nome `__init__`).
+Crie `../../src/onfly_report/__init__.py` (*New → Python File*, nome `__init__`).
 
 ### Passo 3: as duas primeiras linhas
 
@@ -1242,7 +1242,7 @@ Deve imprimir `1.0.0`. Esse comando diz ao Python onde procurar (`src`), importa
 
 ## Pergunta para fixar
 
-Por que você acha que o projeto usa a pasta `src/` em vez de deixar o `onfly_report` direto na raiz? Pense em separar o código do resto (dados, testes, entrega).
+Por que você acha que o projeto usa a pasta `../../src` em vez de deixar o `onfly_report` direto na raiz? Pense em separar o código do resto (dados, testes, entrega).
 
 ## O que me mandar
 
@@ -1262,14 +1262,14 @@ Sem pressa, Marcos. Ler e entender antes de digitar é o certo. Começar pelos d
 
 ## Cartão 1 (novo): pasta `data`
 
-### Arquivo 1: `data/taxas_cambio.csv`
+### Arquivo 1: `../../data/taxas_cambio.csv`
 
 Um CSV é só texto, em que a primeira linha traz os nomes das colunas e as seguintes trazem os valores, separados por vírgula. Esse arquivo tem **duas colunas**:
 
 - `currency`: a sigla da moeda
 - `rate_to_brl`: quanto vale 1 unidade dessa moeda em reais
 
-Crie o arquivo em `data/` (*New → File*, nome `taxas_cambio.csv`) com **4 linhas**: o cabeçalho e as três moedas BRL, USD e EUR. Duas regras:
+Crie o arquivo em `../../data` (*New → File*, nome `taxas_cambio.csv`) com **4 linhas**: o cabeçalho e as três moedas BRL, USD e EUR. Duas regras:
 
 1. Os valores do espelho devem ser **diferentes** dos do desafio (para não confundir os dois projetos).
 2. A taxa do BRL é sempre a mesma, e você consegue deduzir qual. Pense: quanto vale 1 real em reais?
@@ -1349,7 +1349,7 @@ Tem razão, Marcos, pulei etapas. Vamos devagar, como nos projetos Java: cada li
 
 ## Cartão 1, passo 1: escrever o `taxas_cambio.csv`
 
-Você já criou o arquivo em `data/`. Abra-o com dois cliques. Se abrir como tabela vazia, passe para a visualização de **texto** (aba ou botão Text, ou botão direito no arquivo → *Open With* → editor de texto), porque assim você vê exatamente o que fica salvo.
+Você já criou o arquivo em `../../data`. Abra-o com dois cliques. Se abrir como tabela vazia, passe para a visualização de **texto** (aba ou botão Text, ou botão direito no arquivo → *Open With* → editor de texto), porque assim você vê exatamente o que fica salvo.
 
 ### Regras do formato, antes de digitar
 
@@ -1706,7 +1706,7 @@ src/
 
 ### Passo 2: o arquivo que transforma a pasta em pacote
 
-No Java, uma pasta de classes é um `package`. No Python, uma pasta vira **pacote** quando tem um arquivo `__init__.py`. Crie `src/onfly_report/__init__.py` (*New → Python File*, nome `__init__`) e digite:
+No Java, uma pasta de classes é um `package`. No Python, uma pasta vira **pacote** quando tem um arquivo `__init__.py`. Crie `../../src/onfly_report/__init__.py` (*New → Python File*, nome `__init__`) e digite:
 
 ```python
 """CLI de consolidação de reservas de hotel."""
@@ -1731,7 +1731,7 @@ Deve imprimir `1.0.0`.
 
 1. O valor da média por noite (1410 ÷ 7).
 2. A saída do passo 3.
-3. Sua resposta: por que você acha que o projeto usa `src/` em vez de deixar o `onfly_report` solto na raiz?
+3. Sua resposta: por que você acha que o projeto usa `../../src` em vez de deixar o `onfly_report` solto na raiz?
 
 ### **Marcos** · 2026-11-12 16:02:12 UTC
 
@@ -1872,7 +1872,7 @@ Deve imprimir `1.0.0`.
 
 Em Python, o nome de um pacote é usado em `import`, então precisa ser um **identificador válido**: letras, números e underscore, sem hífen e sem espaço. No Java a regra é parecida: um `package` também não aceita hífen.
 
-Me mande a saída do teste e as respostas pendentes, a média por noite (1410 ÷ 7) e o motivo de usar `src/`.
+Me mande a saída do teste e as respostas pendentes, a média por noite (1410 ÷ 7) e o motivo de usar `../../src`.
 
 ### **Marcos** · 2026-11-12 16:05:18 UTC
 
@@ -1889,7 +1889,7 @@ Mas repare no resultado: apareceu **`0.1.0`**, e o esperado era `1.0.0`. O coman
 
 ## Investigue
 
-1. Abra `src/onfly_report/__init__.py` e compare com o que eu pedi, linha por linha:
+1. Abra `../../src/onfly_report/__init__.py` e compare com o que eu pedi, linha por linha:
 
 ```python
 """CLI de consolidação de reservas de hotel."""
@@ -1917,7 +1917,7 @@ Corrija o valor para `"1.0.0"`, salve com Ctrl+S e rode o comando de novo.
 Ainda faltam duas respostas:
 
 1. A média por noite: 1410 ÷ 7, arredondada a 2 casas.
-2. Por que usar `src/` em vez de deixar `onfly_report` solto na raiz do projeto?
+2. Por que usar `../../src` em vez de deixar `onfly_report` solto na raiz do projeto?
 
 Mande o que achou no arquivo e essas duas respostas.
 
@@ -1980,7 +1980,7 @@ Os `;` separam os comandos em uma linha só. No arquivo normal, cada comando fic
 ## Pendentes
 
 1. A média por noite, 1410 ÷ 7, arredondada a 2 casas.
-2. Por que usar `src/` em vez de deixar `onfly_report` solto na raiz?
+2. Por que usar `../../src` em vez de deixar `onfly_report` solto na raiz?
 
 Depois disso, seguimos para o próximo arquivo.
 
@@ -2008,13 +2008,13 @@ Um detalhe para guardar: no Python, no JSON e no CSV o separador decimal é o **
 ## Pendentes, antes do próximo arquivo
 
 1. O comando corrigido agora imprime `1.0.0`?
-2. Por que o projeto usa a pasta `src/` em vez de deixar `onfly_report` solto na raiz? Pense em separar o código do resto (dados, testes, entrega) e no que o `sys.path.insert(0, 'src')` fez.
+2. Por que o projeto usa a pasta `../../src` em vez de deixar `onfly_report` solto na raiz? Pense em separar o código do resto (dados, testes, entrega) e no que o `sys.path.insert(0, 'src')` fez.
 
 ## Cartão 2, passo 2: o arquivo de exceções
 
 No Java, você cria exceções próprias como `class ClienteNaoEncontradoException extends RuntimeException`. Vamos fazer o equivalente.
 
-Crie `src/onfly_report/exceptions.py` e digite:
+Crie `../../src/onfly_report/exceptions.py` e digite:
 
 ```python
 """Exceções de domínio do consolidador de reservas."""
@@ -2063,13 +2063,13 @@ Perfeito, Marcos, esse resultado mostra exatamente a hierarquia que você montou
 
 É como no Java: `InputFileError extends DomainError extends Exception ... extends Object`. Isso permite que o CLI faça `except InputFileError` para tratar só erro de arquivo (código de saída 2) e `except Exception` para o resto (código 1).
 
-Ainda ficaram sem resposta duas coisas: se o `__version__` já imprime `1.0.0` e por que o projeto usa `src/`. Responda quando puder, que eu não esqueço.
+Ainda ficaram sem resposta duas coisas: se o `__version__` já imprime `1.0.0` e por que o projeto usa `../../src`. Responda quando puder, que eu não esqueço.
 
 ## Cartão 2, passo 3: os modelos de dados
 
 No Java você cria uma classe com atributos, construtor e getters. No Python, o `@dataclass` gera isso para você a partir de uma lista de campos.
 
-Crie `src/onfly_report/models.py` e digite, por enquanto, só esta parte:
+Crie `../../src/onfly_report/models.py` e digite, por enquanto, só esta parte:
 
 ```python
 """Modelos de dados do consolidador."""
@@ -2451,7 +2451,7 @@ python treino.py
 
 1. A saída.
 2. Se bateu com a sua previsão.
-3. As respostas pendentes: o `__version__` já está em `1.0.0`? Qual o equivalente do `BigDecimal` no Python e por que dinheiro não usa `float`? Por que `src/`?
+3. As respostas pendentes: o `__version__` já está em `1.0.0`? Qual o equivalente do `BigDecimal` no Python e por que dinheiro não usa `float`? Por que `../../src`?
 
 ### **Marcos** · 2026-11-12 22:15:34 UTC
 
@@ -2463,13 +2463,13 @@ Essa mensagem é do PyCharm avisando: **"Nenhum interpretador Python configurado
 
 ## De qual projeto ela é?
 
-Pelo print, é do projeto **original** da Onfly: o nome `onfly-report` vem do `pyproject.toml` dele, e o texto do docstring ("Modelos de dados do consolidador.") é o do `models.py` original. Confira o nome do projeto no canto superior esquerdo da janela.
+Pelo print, é do projeto **original** da Onfly: o nome `onfly-report` vem do `../../pyproject.toml` dele, e o texto do docstring ("Modelos de dados do consolidador.") é o do `models.py` original. Confira o nome do projeto no canto superior esquerdo da janela.
 
 ## O que fazer com ela
 
 **No projeto original, por enquanto, ignore.** Feche o aviso no X ou deixe como está. Não clique em "Create a virtual environment using requirements.txt", por dois motivos:
 
-1. Esse botão usa o `requirements.txt`, que **não instala nada** (é só um comentário). O arquivo que importa é o `requirements-dev.txt`, com pytest e ruff.
+1. Esse botão usa o `../../requirements.txt`, que **não instala nada** (é só um comentário). O arquivo que importa é o `requirements-dev.txt`, com pytest e ruff.
 2. Queremos criar o ambiente do projeto real juntos, no Dia 3, passo a passo, como fizemos no espelho.
 
 O aviso não impede você de **ler** os arquivos. Ele só afeta rodar o código e o pytest por dentro do PyCharm.
@@ -2504,7 +2504,7 @@ dir *.py
 Esse comando lista os arquivos `.py` da pasta atual. Se não aparecer nenhum `treino.py`, pense nas possibilidades:
 
 1. **O arquivo ainda não foi criado.** Se foi só planejado, crie agora.
-2. **Foi criado em outra pasta**, por exemplo dentro de `src/`, `data/` ou `onfly_report/`, ou no projeto **original** (lembra das duas janelas do PyCharm?).
+2. **Foi criado em outra pasta**, por exemplo dentro de `../../src`, `data/` ou `onfly_report/`, ou no projeto **original** (lembra das duas janelas do PyCharm?).
 3. **O nome está diferente**, como `treino.py.txt`, `treino .py` ou outra letra trocada. O Explorador do Windows às vezes esconde a extensão, mas o `dir` mostra o nome real.
 
 Para procurar em todas as subpastas do projeto, rode:
@@ -2531,7 +2531,7 @@ criei no src
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-12 22:25:56 UTC
 
-Achamos o motivo, Marcos: o arquivo está em `src/`, e o terminal estava na raiz. Duas saídas, e a primeira ensina algo útil.
+Achamos o motivo, Marcos: o arquivo está em `../../src`, e o terminal estava na raiz. Duas saídas, e a primeira ensina algo útil.
 
 ## Opção 1: rodar apontando o caminho
 
@@ -2541,11 +2541,11 @@ No terminal, rode:
 python src\treino.py
 ```
 
-Isso deve funcionar, porque você informa onde o arquivo está. E aqui há uma lição escondida: dentro do código, o caminho `"data/reservas.csv"` é **relativo à pasta onde o terminal está** (a raiz), e não à pasta do arquivo `.py`. Como o terminal está em `C:\onfly_teste_v1`, o `data/reservas.csv` é encontrado mesmo com o script em `src/`. Se você rodasse de dentro de `src`, ele procuraria `src\data\reservas.csv` e daria `FileNotFoundError`.
+Isso deve funcionar, porque você informa onde o arquivo está. E aqui há uma lição escondida: dentro do código, o caminho `"data/reservas.csv"` é **relativo à pasta onde o terminal está** (a raiz), e não à pasta do arquivo `.py`. Como o terminal está em `C:\onfly_teste_v1`, o `data/reservas.csv` é encontrado mesmo com o script em `../../src`. Se você rodasse de dentro de `src`, ele procuraria `src\data\reservas.csv` e daria `FileNotFoundError`.
 
 ## Opção 2: mover o arquivo para a raiz (a que eu recomendo)
 
-`src/` é para o código do pacote, e o `treino.py` é só um rascunho. No PyCharm, arraste o arquivo de `src` para a pasta raiz `onfly_teste_v1`, ou use botão direito → *Refactor → Move*. Depois rode:
+`../../src` é para o código do pacote, e o `treino.py` é só um rascunho. No PyCharm, arraste o arquivo de `src` para a pasta raiz `onfly_teste_v1`, ou use botão direito → *Refactor → Move*. Depois rode:
 
 ```
 python treino.py
@@ -2567,17 +2567,17 @@ Quase igual à estrutura do desafio, Marcos. Comparando o seu print com o que co
 
 ## 1. Onde está o `treino.py`
 
-Ele está em `src/onfly_report/treino.py`, **dentro do pacote**, e não em `src/` como eu tinha entendido. Por isso `python src\treino.py` também não o acharia. Um rascunho não deve ficar dentro do pacote, para não ser confundido com código do projeto.
+Ele está em `src/onfly_report/treino.py`, **dentro do pacote**, e não em `../../src` como eu tinha entendido. Por isso `python src\treino.py` também não o acharia. Um rascunho não deve ficar dentro do pacote, para não ser confundido com código do projeto.
 
 **Mova-o para a raiz** `onfly_teste_v1`, ao lado do `main.py` (arraste no PyCharm, ou botão direito → *Refactor → Move*). Depois rode `python treino.py`.
 
 ## 2. A pasta `test`
 
-Você criou `test` (singular). O desafio usa **`tests`** (plural), e é o padrão que vamos seguir, inclusive porque o `pyproject.toml` do projeto real aponta `testpaths = ["tests"]`. Renomeie com botão direito → *Refactor → Rename*.
+Você criou `test` (singular). O desafio usa **`tests`** (plural), e é o padrão que vamos seguir, inclusive porque o `../../pyproject.toml` do projeto real aponta `testpaths = ["tests"]`. Renomeie com botão direito → *Refactor → Rename*.
 
 ## 3. O `main.py` da raiz
 
-Esse arquivo foi criado automaticamente pelo PyCharm ao abrir o projeto, com um código de exemplo. Ele não faz parte da estrutura do desafio. Pode apagá-lo (botão direito → *Delete*), ou deixar, porque não atrapalha. O ponto de entrada do nosso CLI vai ser outro: `src/onfly_report/__main__.py`.
+Esse arquivo foi criado automaticamente pelo PyCharm ao abrir o projeto, com um código de exemplo. Ele não faz parte da estrutura do desafio. Pode apagá-lo (botão direito → *Delete*), ou deixar, porque não atrapalha. O ponto de entrada do nosso CLI vai ser outro: `../../src/onfly_report/__main__.py`.
 
 ## Estrutura alvo
 
@@ -2668,7 +2668,7 @@ Apague as antigas, Marcos, e deixe só as novas. O `treino.py` é um rascunho, e
 
 Se preferir guardar o experimento do CSV para consultar depois, **comente** as linhas antigas em vez de apagar: selecione-as e aperte **Ctrl+/** no PyCharm, que coloca um `#` no início de cada uma. O `#` faz o Python ignorar a linha, como o `//` do Java. Mas misturar tudo no mesmo arquivo deixa a saída confusa, então para este exercício o mais limpo é substituir o conteúdo.
 
-Se o arquivo ainda estiver em `src/onfly_report/`, mova-o antes para a raiz `onfly_teste_v1`. Depois rode:
+Se o arquivo ainda estiver em `../../src/onfly_report`, mova-o antes para a raiz `onfly_teste_v1`. Depois rode:
 
 ```
 python treino.py
@@ -2884,7 +2884,7 @@ O segundo comando faz o que o desafio manda: arredonda para 2 casas (`quantize`,
 2. Eles deram o mesmo número? Se não, qual deles seguiu a regra "meio sobe"?
 3. Com suas palavras: por que um sistema de faturamento não pode aceitar essa diferença?
 
-Depois disso, ainda ficam pendentes duas respostas minhas: por que usar `src/` no projeto, e o `__version__` já está em `1.0.0`? Responda quando puder, e seguimos para o `RowParser`.
+Depois disso, ainda ficam pendentes duas respostas minhas: por que usar `../../src` no projeto, e o `__version__` já está em `1.0.0`? Responda quando puder, e seguimos para o `RowParser`.
 
 ### **Marcos** · 2026-11-12 22:46:51 UTC
 
@@ -2954,7 +2954,7 @@ Pelo calendário, hoje (12/11) é um dia de espelho e amanhã o projeto real. En
 
 ### Passo 1: criar a pasta `services`
 
-Crie `src/onfly_report/services/` com um arquivo vazio `__init__.py` dentro, igual ao do pacote.
+Crie `../../src/onfly_report/services` com um arquivo vazio `__init__.py` dentro, igual ao do pacote.
 
 ### Passo 2: criar `services/row_parser.py`
 
@@ -3559,7 +3559,7 @@ vamos nos outros passos 1 de cada vez
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-12 23:53:52 UTC
 
-O `ruff` passou, Marcos. Um esclarecimento meu: eu disse que ele apontaria as linhas em branco, mas o `ruff` sem configuração só checa os erros mais graves. O `pyproject.toml` do projeto original ativa também as regras de estilo (`E`, `F` e `I`). Por isso, se você quiser a verificação igual à do desafio, rode no seu espelho: `ruff check src --select E,F,I`. Não é urgente, então vamos ao passo de hoje.
+O `ruff` passou, Marcos. Um esclarecimento meu: eu disse que ele apontaria as linhas em branco, mas o `ruff` sem configuração só checa os erros mais graves. O `../../pyproject.toml` do projeto original ativa também as regras de estilo (`E`, `F` e `I`). Por isso, se você quiser a verificação igual à do desafio, rode no seu espelho: `ruff check src --select E,F,I`. Não é urgente, então vamos ao passo de hoje.
 
 ## Cartão 4, passo 1: `status_policy.py`
 
@@ -3567,7 +3567,7 @@ Pelas regras do desafio, **só um status é faturável**. É aqui que o "filtrar
 
 ### Crie o arquivo
 
-`src/onfly_report/services/status_policy.py`, com o molde:
+`../../src/onfly_report/services/status_policy.py`, com o molde:
 
 ```python
 """Política de status das reservas."""
@@ -3721,7 +3721,7 @@ Um ajuste menor: ainda há uma linha em branco antes do `def`, e a convenção s
 
 Agora a regra das noites, que você já usou no `treino.py`.
 
-### Crie `src/onfly_report/services/stay_calculator.py`
+### Crie `../../src/onfly_report/services/stay_calculator.py`
 
 ```python
 """Cálculo de noites ocupadas."""
@@ -3774,7 +3774,7 @@ Sua explicação está certa, Marcos, só com um ajuste de palavra. Com o `!= "C
 
 Você identificou exatamente o risco: **qualquer dado diferente entrava na soma**, inclusive vazio ou desconhecido. Essa é a razão de a regra ser escrita como "só `CONFIRMED`", e não "tudo menos X".
 
-Anote isso para o `README-ENTREGA.md` do projeto real, que vai pedir *"causa raiz em uma frase por defeito"*. Uma frase boa para um defeito assim teria o tipo do que você acabou de explicar: o que o código fazia, e por que isso dava resultado errado.
+Anote isso para o `../README-ENTREGA.md` do projeto real, que vai pedir *"causa raiz em uma frase por defeito"*. Uma frase boa para um defeito assim teria o tipo do que você acabou de explicar: o que o código fazia, e por que isso dava resultado errado.
 
 ## Continuando o Cartão 4, passo 2
 
@@ -3991,7 +3991,7 @@ Com `checkout.day - checkin.day`, o que daria de 30/01 a 02/02? Pense: `.day` é
 
 A conversão de moeda, a regra do câmbio.
 
-### Crie `src/onfly_report/services/currency_converter.py`
+### Crie `../../src/onfly_report/services/currency_converter.py`
 
 ```python
 """Conversão de valores para BRL."""
@@ -4290,7 +4290,7 @@ O prazo é por volta de 15/11, então:
 
 - **Sexta (13/11):** terminar o espelho (repositório, agregador e CLI) e escrever 2 ou 3 testes seus.
 - **Sábado (14/11):** projeto real: rodar o `pytest`, ler o código e corrigir um defeito por vez.
-- **Domingo (15/11):** documentar (`README-ENTREGA.md`, declaração), exportar a sessão e subir no GitHub.
+- **Domingo (15/11):** documentar (`../README-ENTREGA.md`, declaração), exportar a sessão e subir no GitHub.
 
 Se concordar, mantemos assim. Se o prazo exato do e-mail for diferente, me avise.
 
@@ -4398,7 +4398,7 @@ qual e o desafio real, criar um CLI novo ou correção ?
 1. Roda `pytest -q`. No início os testes falham, e isso é esperado.
 2. Usa as falhas como pista para descobrir **qual regra** o código viola.
 3. Corrige um defeito de cada vez, sem mexer nos testes.
-4. Documenta o que achou em `README-ENTREGA.md`: o defeito, a causa raiz em uma frase, como investigou e como validar.
+4. Documenta o que achou em `../README-ENTREGA.md`: o defeito, a causa raiz em uma frase, como investigou e como validar.
 
 ## O que **não** é
 
@@ -4428,7 +4428,7 @@ Sim, é isso que eu sugeri, Marcos: **continuar o espelho completo** para você 
 |---|---|
 | Sexta (13/11) | terminar o espelho (repositórios, agregador, CLI) e escrever seus testes |
 | Sábado (14/11) | projeto real: `pytest`, leitura do código, correção um defeito por vez |
-| Domingo (15/11) | `README-ENTREGA.md`, declaração, exportação da sessão e GitHub |
+| Domingo (15/11) | `../README-ENTREGA.md`, declaração, exportação da sessão e GitHub |
 
 Se na sexta à tarde o espelho estiver atrasado, encurtamos o CLI, e o agregador e os testes ficam como prioridade.
 
@@ -4463,14 +4463,14 @@ Boa proposta, Marcos, e dá para fazer assim. Só um ajuste para proteger o praz
 |---|---|---|
 | Sexta de manhã | terminar o essencial do espelho: repositórios e agregador (`report_builder`), com seus testes | ~3 h |
 | Sexta à tarde | abrir o projeto real: ambiente, `pytest -q`, ler os testes e o código, achar os primeiros defeitos | ~metade |
-| Sábado | 6 h diretas: corrigir o que faltar, escrever o `README-ENTREGA.md`, a declaração e exportar a sessão | conclusão |
+| Sábado | 6 h diretas: corrigir o que faltar, escrever o `../README-ENTREGA.md`, a declaração e exportar a sessão | conclusão |
 | Domingo | revisão final com o checklist do desafio, GitHub e envio do link pelo formulário | folga |
 
 Isso respeita a sua ideia, e deixa uma margem caso algo trave (um erro de ambiente, um teste difícil, ou o GitHub pedindo ajuste).
 
 ## Por que a folga importa
 
-Entrega em cima do prazo costuma dar problema por coisas pequenas: repositório privado em vez de público, pasta `entrega/` faltando, link errado. Com o domingo livre, você revisa com calma. Além disso, confirme a **data exata** no e-mail da Onfly. Se o prazo for no domingo à noite, essa folga é ainda mais valiosa.
+Entrega em cima do prazo costuma dar problema por coisas pequenas: repositório privado em vez de público, pasta `..` faltando, link errado. Com o domingo livre, você revisa com calma. Além disso, confirme a **data exata** no e-mail da Onfly. Se o prazo for no domingo à noite, essa folga é ainda mais valiosa.
 
 ## Sobre as 6 horas de sábado
 
@@ -4488,17 +4488,17 @@ outro ponto lendo o documento não e para reescrever os tests nem escrever teste
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-13 01:29:19 UTC
 
-Você está certo no essencial, Marcos, com um detalhe a acrescentar. O que o `README.md` diz:
+Você está certo no essencial, Marcos, com um detalhe a acrescentar. O que o `../../README.md` diz:
 
-- *"**Não altere os testes fornecidos.**"* Isso é uma regra firme: os arquivos em `tests/` ficam intactos.
+- *"**Não altere os testes fornecidos.**"* Isso é uma regra firme: os arquivos em `../../tests` ficam intactos.
 - *"Se quiser, adicione testes novos em arquivos `test_*.py`."* É **opcional**.
 - *"Testes adicionais são considerados"* (na parte de avaliação). Ou seja, não são obrigatórios, mas contam a favor.
 
 ## O que isso significa para o desafio real
 
-1. **O trabalho principal é achar e corrigir os defeitos no código** (`src/onfly_report/`), sem tocar nos testes fornecidos.
+1. **O trabalho principal é achar e corrigir os defeitos no código** (`../../src/onfly_report`), sem tocar nos testes fornecidos.
 2. **Escrever testes novos não é exigido.** Se sobrar tempo, um teste novo para um defeito que você corrigiu, em um arquivo separado, é um bônus. Eu priorizaria **depois** de tudo passar, e só se o tempo permitir.
-3. A investigação vai ser a parte central do `README-ENTREGA.md`: o que falhou, qual a causa raiz e como você descobriu.
+3. A investigação vai ser a parte central do `../README-ENTREGA.md`: o que falhou, qual a causa raiz e como você descobriu.
 
 ## O que isso muda no espelho
 
@@ -4596,7 +4596,7 @@ A venv também está ativa de novo: o `(.venv)` voltou.
 
 ## Próximo: o repositório de reservas
 
-Crie a pasta `repositories/` dentro de `src/onfly_report/`, com um arquivo vazio `__init__.py`, e depois `csv_reservation_repository.py`, com este molde:
+Crie a pasta `repositories/` dentro de `../../src/onfly_report`, com um arquivo vazio `__init__.py`, e depois `csv_reservation_repository.py`, com este molde:
 
 ```python
 """Leitura da exportação de reservas em CSV."""
@@ -4988,7 +4988,7 @@ Isso mantém o espelho **só até o agregador** (o CLI completo fica de fora, po
 
 ## Um exercício de leitura, para quando acordar
 
-Abra, no projeto original, `tests/test_status_rules.py` e responda, só lendo (sem rodar nada):
+Abra, no projeto original, `../../tests/test_status_rules.py` e responda, só lendo (sem rodar nada):
 
 1. Quais são os três status criados e quais valores cada um tem?
 2. Quais campos do relatório ele confere, e qual é o valor esperado de cada um?
@@ -5016,7 +5016,7 @@ O esperado é `3` e `RawRow(line_number=2, values={...})`. Me diga o resultado a
 
 ## 2. Primeira peça do agregador: contar por status
 
-Esta é a etapa **"contar status"** do pipeline, que acontece **antes** de filtrar. Crie `src/onfly_report/services/report_builder.py` com este molde:
+Esta é a etapa **"contar status"** do pipeline, que acontece **antes** de filtrar. Crie `../../src/onfly_report/services/report_builder.py` com este molde:
 
 ```python
 """Construção do relatório consolidado."""
@@ -5149,7 +5149,7 @@ O nome da **pasta** precisa ser exatamente o que aparece no `import` (`from ..re
 
 ## Corrigir
 
-1. No PyCharm, clique com o botão direito na pasta `repository` (dentro de `src/onfly_report`) → **Refactor → Rename**.
+1. No PyCharm, clique com o botão direito na pasta `repository` (dentro de `../../src/onfly_report`) → **Refactor → Rename**.
 2. Digite `repositories` e confirme.
 3. Abra a pasta e confirme que existe um arquivo `__init__.py` dentro dela (vazio) e o `csv_reservation_repository.py`.
 
@@ -5187,7 +5187,7 @@ Se preferir manter o seu nome, tudo bem no espelho, só precisa lembrar disso no
 
 ## Próximo passo: o `count_by_status`
 
-Crie `src/onfly_report/services/report_builder.py` com o molde da mensagem anterior. Para você não precisar voltar lá:
+Crie `../../src/onfly_report/services/report_builder.py` com o molde da mensagem anterior. Para você não precisar voltar lá:
 
 ```python
 """Construção do relatório consolidado."""
@@ -5849,7 +5849,7 @@ desses quais vão interferir diretamento na realização do desafio?
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-14 04:10:00 UTC
 
-Boa pergunta para priorizar, Marcos. Vou cruzar os itens com os 5 testes fornecidos, que você já tem em `tests/`.
+Boa pergunta para priorizar, Marcos. Vou cruzar os itens com os 5 testes fornecidos, que você já tem em `../../tests`.
 
 ## O que cada teste cobra
 
@@ -5909,7 +5909,7 @@ Você já conhece cada serviço do espelho. Para cada teste abaixo, escreva em *
 | `test_top_hotels.py` | ordem do ranking |
 | `test_regression_report.py` | resumo completo |
 
-Essas hipóteses viram o seu **roteiro de investigação** e as primeiras linhas do `README-ENTREGA.md` ("como investiguei"). Se a hipótese estiver errada, melhor ainda: aprender a descartar uma hipótese também é parte do trabalho.
+Essas hipóteses viram o seu **roteiro de investigação** e as primeiras linhas do `../README-ENTREGA.md` ("como investiguei"). Se a hipótese estiver errada, melhor ainda: aprender a descartar uma hipótese também é parte do trabalho.
 
 Pode ser amanhã. Já é 1h10 da manhã, então um bom ponto para parar. Quando voltar, me mande o `pytest -q` do projeto real e as suas hipóteses.
 
@@ -5921,9 +5921,9 @@ eu não preciso criar testes so preciso identificar o erro certo ?
 
 Isso mesmo, Marcos. Você não precisa criar testes. O que o desafio pede é:
 
-1. **Identificar** os defeitos no código do CLI (`src/onfly_report/`).
+1. **Identificar** os defeitos no código do CLI (`../../src/onfly_report`).
 2. **Corrigir** o código, sem alterar os testes fornecidos.
-3. **Documentar** no `README-ENTREGA.md`: cada defeito, a causa raiz em uma frase, como você investigou e como validar.
+3. **Documentar** no `../README-ENTREGA.md`: cada defeito, a causa raiz em uma frase, como você investigou e como validar.
 4. Ao fim, `pytest -q` precisa passar.
 
 Dois cuidados:
@@ -5959,9 +5959,9 @@ Esses são os dois temas que ainda não vimos em código, e os testes de ranking
 | Quando | O quê |
 |---|---|
 | Manhã, ~1h30 | aquecimento: `format_money`, média e `top_hotels` no espelho |
-| Depois | projeto real, passo 1: criar o venv dele, instalar o `requirements-dev.txt` e rodar `pytest -q` |
+| Depois | projeto real, passo 1: criar o venv dele, instalar o `../../requirements-dev.txt` e rodar `pytest -q` |
 | Tarde | investigação: uma falha por vez, com suas hipóteses |
-| Fim do dia | `README-ENTREGA.md`, declaração e exportação da sessão |
+| Fim do dia | `../README-ENTREGA.md`, declaração e exportação da sessão |
 | Domingo | revisão, GitHub e envio |
 
 ## Passo de preparação (opcional, 2 min, antes de dormir)
@@ -6012,7 +6012,7 @@ Os temas que faltavam no espelho (arredondamento, média, ordenação, agrupamen
 
 Eu manteria só **o que você já construiu** (que fixou bem as regras) e iria direto ao real amanhã, em vez de terminar o espelho. Se tiver dúvida de conceito no meio, a gente faz um mini-exercício genérico na hora.
 
-Combinado assim? Se sim, anote para o `README-ENTREGA.md`: *"usei a IA para explicar sintaxe e conceitos; eu identifiquei e corrigi os defeitos"*, e vamos deixar isso verdadeiro.
+Combinado assim? Se sim, anote para o `../README-ENTREGA.md`: *"usei a IA para explicar sintaxe e conceitos; eu identifiquei e corrigi os defeitos"*, e vamos deixar isso verdadeiro.
 
 Agora descanse. Quando voltar, me mande o prazo exato e o resultado do `pytest -q`.
 
@@ -6063,10 +6063,10 @@ Combinado, Marcos. Amanhã (sábado, 14/11) o plano fica assim:
 |---|---|
 | 1 | Confirmar o **prazo exato** do e-mail da Onfly |
 | 2 | **Preparar o ambiente** do projeto real: venv próprio e `pip install -r requirements-dev.txt` |
-| 3 | **Criar o repositório** (Git local, `.gitignore` já vem no projeto) e, mais tarde, o repositório público no GitHub |
+| 3 | **Criar o repositório** (Git local, `../../.gitignore` já vem no projeto) e, mais tarde, o repositório público no GitHub |
 | 4 | Rodar `pytest -q` e ler as falhas |
 | 5 | Analisar o código **parte por parte**, na ordem do pipeline, com as suas hipóteses |
-| 6 | Corrigir **um defeito por vez**, anotando para o `README-ENTREGA.md` |
+| 6 | Corrigir **um defeito por vez**, anotando para o `../README-ENTREGA.md` |
 
 ## Para adiantar, quando acordar
 
@@ -6077,8 +6077,8 @@ Combinado, Marcos. Amanhã (sábado, 14/11) o plano fica assim:
 ## Lembretes do combinado
 
 - Você **corrige**, e eu explico a sintaxe, comparo com Java e faço perguntas.
-- Nada de mexer na pasta `tests/` nem nos dois CSVs originais.
-- Cada defeito que você achar vira uma entrada no `README-ENTREGA.md`: *o que falhava, a causa raiz em uma frase, como investiguei*.
+- Nada de mexer na pasta `../../tests` nem nos dois CSVs originais.
+- Cada defeito que você achar vira uma entrada no `../README-ENTREGA.md`: *o que falhava, a causa raiz em uma frase, como investiguei*.
 - No fim, a sessão é exportada para `entrega/uso-de-ia/` junto da `declaracao.md`.
 
 Descanse bem, que o dia de amanhã é longo e vale a pena começar com a cabeça fresca. Até daqui a pouco.
@@ -6153,7 +6153,7 @@ Agora são 12h24 de sábado, então sobram umas **26 horas**, e o domingo deixa 
 |---|---|
 | Agora (sábado, início da tarde) | ambiente do projeto real e `pytest -q` |
 | Sábado, tarde e noite | investigar e corrigir os defeitos, um por vez |
-| Sábado à noite ou domingo cedo | `README-ENTREGA.md`, exportar a sessão, `declaracao.md` |
+| Sábado à noite ou domingo cedo | `../README-ENTREGA.md`, exportar a sessão, `uso_de_ia/declaracao.md` |
 | Domingo de manhã | GitHub público e envio do link pelo formulário, **bem antes das 15h** |
 
 O espelho fica como está (você já tem as peças principais). Vamos direto ao projeto real.
@@ -6192,7 +6192,7 @@ Boa decisão, Marcos: tratar hoje como o último dia protege você. Se algo sair
 | 12h30 – 13h00 | ambiente, `pytest -q`, repositório local |
 | 13h00 – 18h00 | investigar e corrigir, um defeito por vez |
 | 18h00 – 19h30 | validar com a amostra do README e rodar o comando completo |
-| 19h30 – 21h00 | `README-ENTREGA.md`, `declaracao.md` e exportação da sessão |
+| 19h30 – 21h00 | `../README-ENTREGA.md`, `uso_de_ia/declaracao.md` e exportação da sessão |
 | 21h00 – 22h00 | GitHub público e envio do link pelo formulário |
 
 Se o seu ritmo estiver mais lento que o previsto, a primeira coisa a cortar é a polidez dos textos, e não a correção do código. Cuidado também com o horário: a última etapa (GitHub e formulário) é a mais comum de dar problema, então não a deixe para os minutos finais.
@@ -6284,7 +6284,7 @@ Rode:
 pip install -r requirements-dev.txt
 ```
 
-- **O que faz:** lê o arquivo `requirements-dev.txt`, que pede `pytest==8.3.4` e `ruff==0.8.4`, e instala exatamente essas versões. É o equivalente ao Maven baixando o que está no `pom.xml`.
+- **O que faz:** lê o arquivo `../../requirements-dev.txt`, que pede `pytest==8.3.4` e `ruff==0.8.4`, e instala exatamente essas versões. É o equivalente ao Maven baixando o que está no `pom.xml`.
 - **O que você deve ver:** várias linhas de download e, no fim, algo como `Successfully installed ... pytest-8.3.4 ... ruff-0.8.4`.
 
 ## Parte F: rodar os testes
@@ -6295,7 +6295,7 @@ Rode:
 pytest -q
 ```
 
-- **O que faz:** procura os arquivos `test_*.py` na pasta `tests/` (o `pyproject.toml` já aponta para lá) e executa cada teste.
+- **O que faz:** procura os arquivos `test_*.py` na pasta `../../tests` (o `pyproject.toml` já aponta para lá) e executa cada teste.
 - **O que você deve ver:** mensagens de teste **falhando**, com letras `F` e blocos em vermelho. Isso é esperado, como o próprio `README` avisa. **Não tente corrigir nada ainda.**
 - **O que fazer com a saída:** copie **tudo** e cole aqui, mesmo que seja longa.
 
@@ -6334,7 +6334,7 @@ Boa abordagem, Marcos: o `README` do desafio vira o nosso roteiro. Cada etapa te
 | 3 | **Regras de negócio** | status, noites, câmbio, totais, exatidão, ordenação |
 | 4 | **Contrato do CLI** | argumentos e formato do JSON |
 | 5 | **Amostra de validação** | conferir o resultado esperado |
-| 6 | **Entrega** | `README-ENTREGA.md`, sessão e declaração |
+| 6 | **Entrega** | `../README-ENTREGA.md`, sessão e declaração |
 | 7 | **Checklist** | revisão final |
 
 ## Etapa 1: Como rodar
@@ -6395,7 +6395,7 @@ $env:PYTHONPATH="src"
 python -m onfly_report --input data/reservas_hoteis.csv --rates data/taxas_cambio.csv --output output/report.json
 ```
 
-O CLI imprime um resumo em uma linha, algo como `Reservas: ... | Confirmadas: ... | Noites: ... | Total BRL: ...`, e grava `output/report.json`.
+O CLI imprime um resumo em uma linha, algo como `Reservas: ... | Confirmadas: ... | Noites: ... | Total BRL: ...`, e grava `../../output/report.json`.
 
 **Não corrija nem julgue nada ainda.** Só anote o que apareceu.
 
@@ -6470,7 +6470,7 @@ Sobre "errados" contra "desordenados": se o relatório saísse só fora de ordem
 
 O trecho do `README`:
 
-> **Requisitos:** Python 3.11+ e pytest para os testes (`requirements-dev.txt`).
+> **Requisitos:** Python 3.11+ e pytest para os testes (`../../requirements-dev.txt`).
 >
 > ```bash
 > python3.11 -m venv .venv
@@ -6483,7 +6483,7 @@ O trecho do `README`:
 >   --output output/report.json
 > ```
 >
-> O relatório é gravado em `output/report.json`; o CLI cria o diretório. Um resumo é impresso no stdout.
+> O relatório é gravado em `../../output/report.json`; o CLI cria o diretório. Um resumo é impresso no stdout.
 
 ## Responda com suas palavras
 
@@ -6505,7 +6505,7 @@ Duas respostas certas, Marcos, com dois ajustes, e ainda faltam as duas últimas
 
 ## Ajustes
 
-1. **Requisitos:** o texto diz **Python 3.11+**, o `+` significa "3.11 **ou superior**". Por isso o seu 3.15 atende. O pytest é a biblioteca de testes, e o arquivo `requirements-dev.txt` diz quais versões instalar.
+1. **Requisitos:** o texto diz **Python 3.11+**, o `+` significa "3.11 **ou superior**". Por isso o seu 3.15 atende. O pytest é a biblioteca de testes, e o arquivo `../../requirements-dev.txt` diz quais versões instalar.
 2. **As três linhas:** você acertou duas (criar o venv e instalar os requisitos), mas falou de um passo só em conjunto. Na ordem são:
    - criar o ambiente (`python3.11 -m venv .venv`)
    - **ativar** o ambiente (`source .venv/bin/activate`), que é o passo que faz o `(.venv)` aparecer no terminal
@@ -6547,7 +6547,7 @@ Combinado, Marcos: nas leituras do `README` eu explico direto, sem perguntas de 
 | `--rates data/taxas_cambio.csv` | o CSV com as taxas de câmbio | o CLI **lê** |
 | `--output output/report.json` | o caminho do relatório | o CLI **escreve** |
 
-**Onde sai o resultado:** o relatório completo vai para `output/report.json`. Se a pasta `output` não existir, o CLI a **cria**. Além disso, ele imprime **um resumo curto no `stdout`**, ou seja, na própria tela do terminal.
+**Onde sai o resultado:** o relatório completo vai para `../../output/report.json`. Se a pasta `output` não existir, o CLI a **cria**. Além disso, ele imprime **um resumo curto no `stdout`**, ou seja, na própria tela do terminal.
 
 **As três linhas de preparo:** criar o venv, **ativar** o venv e instalar as dependências, nessa ordem.
 
@@ -6594,7 +6594,7 @@ Sem problema, Marcos. Recomeçamos do início do `README`, desta vez eu explico 
 > Você recebeu a exportação de reservas de hotel de uma empresa cliente da Onfly.
 
 - Uma **empresa cliente** da Onfly reservou hotéis para seus funcionários.
-- A **exportação** é um arquivo com a lista dessas reservas, uma por linha. No seu projeto ele está em `data/reservas_hoteis.csv` (um CSV, como o que você criou no espelho).
+- A **exportação** é um arquivo com a lista dessas reservas, uma por linha. No seu projeto ele está em `../../data/reservas_hoteis.csv` (um CSV, como o que você criou no espelho).
 
 > O CLI deste projeto deveria gerar um relatório JSON consolidado, mas **entrega números errados**.
 
@@ -6638,7 +6638,7 @@ ficou claro, agora vamos ler juntos o documento e executar parte por parte junto
 
 O trecho do `README`:
 
-> **Requisitos:** Python 3.11+ e pytest para os testes (`requirements-dev.txt`).
+> **Requisitos:** Python 3.11+ e pytest para os testes (`../../requirements-dev.txt`).
 >
 > ```bash
 > python3.11 -m venv .venv
@@ -6646,7 +6646,7 @@ O trecho do `README`:
 > pip install -r requirements-dev.txt
 > ```
 
-Em palavras simples: o projeto precisa do Python 3.11 ou superior (o seu 3.15 serve), e do pytest e do ruff, que ficam listados no `requirements-dev.txt`. As três linhas criam o ambiente isolado, **ativam** esse ambiente e instalam o que o projeto precisa.
+Em palavras simples: o projeto precisa do Python 3.11 ou superior (o seu 3.15 serve), e do pytest e do ruff, que ficam listados no `../../requirements-dev.txt`. As três linhas criam o ambiente isolado, **ativam** esse ambiente e instalam o que o projeto precisa.
 
 ## Execução, parte 1: criar e ativar o ambiente
 
@@ -6761,7 +6761,7 @@ $env:PYTHONPATH="src"
 python -m onfly_report --input data/reservas_hoteis.csv --rates data/taxas_cambio.csv --output output/report.json
 ```
 
-O CLI deve imprimir uma linha de resumo com as reservas, as confirmadas, as noites e o total em BRL, e gravar o arquivo `output/report.json`.
+O CLI deve imprimir uma linha de resumo com as reservas, as confirmadas, as noites e o total em BRL, e gravar o arquivo `../../output/report.json`.
 
 ## O que me mandar
 
@@ -6788,7 +6788,7 @@ Rodou sem erro, Marcos, mas olhe o nome do arquivo que você usou:
 pip install -r .\requirements.txt
 ```
 
-O `requirements.txt` é o de **runtime**, e o conteúdo dele é só um comentário dizendo que o CLI usa apenas a biblioteca padrão do Python. Por isso o `pip` não instalou nada. O arquivo que o `README` pede é outro, o **`requirements-dev.txt`**, com o pytest e o ruff.
+O `../../requirements.txt` é o de **runtime**, e o conteúdo dele é só um comentário dizendo que o CLI usa apenas a biblioteca padrão do Python. Por isso o `pip` não instalou nada. O arquivo que o `README` pede é outro, o **`requirements-dev.txt`**, com o pytest e o ruff.
 
 ## Passo 4 de novo: o arquivo certo
 
@@ -6834,11 +6834,11 @@ nv) PS C:\onfly-desafio> pip install -r requirements.txt
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-14 23:30:42 UTC
 
-Você rodou de novo o `requirements.txt`, Marcos, sem o `-dev`. Compare, letra por letra:
+Você rodou de novo o `../../requirements.txt`, Marcos, sem o `-dev`. Compare, letra por letra:
 
 | O que você digitou | O que o `README` pede |
 |---|---|
-| `requirements.txt` | `requirements-dev.txt` |
+| `../../requirements.txt` | `../../requirements-dev.txt` |
 
 Faltam os **cinco caracteres `-dev`** antes do `.txt`. É a mesma checagem que você já fez com o `.venc` e o `onfly-report`: comparar o que foi digitado com o que foi pedido.
 
@@ -6894,7 +6894,7 @@ Successfully installed colorama-0.4.6 iniconfig-2.3.1 packaging-26.3 pluggy-1.7.
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-14 23:31:27 UTC
 
-Instalou certo, Marcos: `pytest-8.3.4` e `ruff-0.8.4`, as versões exatas do `requirements-dev.txt`. Repare que agora o `pip` baixou os pacotes, ao contrário das duas tentativas anteriores. A diferença estava naquele `-dev`.
+Instalou certo, Marcos: `pytest-8.3.4` e `ruff-0.8.4`, as versões exatas do `../../requirements-dev.txt`. Repare que agora o `pip` baixou os pacotes, ao contrário das duas tentativas anteriores. A diferença estava naquele `-dev`.
 
 ## Passo 5: executar o CLI
 
@@ -6917,12 +6917,12 @@ O CLI deve imprimir uma linha como:
 Reservas: ... | Confirmadas: ... | Noites: ... | Total BRL: ...
 ```
 
-e criar o arquivo `output/report.json`. Se aparecer uma linha de log em vermelho ou um erro, copie a mensagem inteira.
+e criar o arquivo `../../output/report.json`. Se aparecer uma linha de log em vermelho ou um erro, copie a mensagem inteira.
 
 ## O que me mandar
 
 1. A linha de resumo que o CLI imprimiu.
-2. Se o arquivo `output/report.json` apareceu no painel esquerdo do PyCharm.
+2. Se o arquivo `../../output/report.json` apareceu no painel esquerdo do PyCharm.
 
 Ainda não julgue os números. Com isso, passamos à **Leitura 3: os testes**.
 
@@ -6989,11 +6989,11 @@ Anote essa linha: ela é o **ponto de partida**, o "antes" da correção. Ainda 
 
 O trecho do `README`:
 
-> Os testes já estão em `tests/`. No início, todos falham, e isso é esperado. Rode `pytest -q`. Corrija o código até todos passarem. **Não altere os testes fornecidos.** Se quiser, adicione testes novos em arquivos `test_*.py`.
+> Os testes já estão em `../../tests`. No início, todos falham, e isso é esperado. Rode `pytest -q`. Corrija o código até todos passarem. **Não altere os testes fornecidos.** Se quiser, adicione testes novos em arquivos `test_*.py`.
 
 Em palavras simples:
 
-- Os testes são os **fiscais** que já vêm prontos, na pasta `tests/`.
+- Os testes são os **fiscais** que já vêm prontos, na pasta `../../tests`.
 - Todos falham no começo, e isso é esperado.
 - O `-q` significa *quiet*: o pytest imprime uma saída curta.
 - A regra é: **você muda o código do CLI, nunca os testes**.
@@ -7024,7 +7024,7 @@ Combinado, Marcos, é um bom método: **uma falha por vez**, com o log dela. Um 
 3. **Você levanta uma hipótese**: qual etapa do pipeline, e qual regra do `README`.
 4. **Eu te dou pistas** para achar o arquivo e a linha, e explico a sintaxe que for nova.
 5. **Você corrige** e roda **só aquele teste**.
-6. **Anotamos** a causa raiz em uma frase, para o `README-ENTREGA.md`.
+6. **Anotamos** a causa raiz em uma frase, para o `../README-ENTREGA.md`.
 
 ## Como ler o log do pytest
 
@@ -7058,7 +7058,7 @@ antes vamos entender os erros estão nos testes ou estão no codigo?
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-14 23:51:26 UTC
 
-Os erros estão **no código do CLI** (a pasta `src/onfly_report/`), e não nos testes, Marcos.
+Os erros estão **no código do CLI** (a pasta `../../src/onfly_report`), e não nos testes, Marcos.
 
 ## Por que podemos confiar nos testes
 
@@ -7078,7 +7078,7 @@ regra do README ──► teste (confere a regra) ──► falha ──► o CL
 
 ## O que isso muda no seu trabalho
 
-- Você **não** mexe em `tests/`.
+- Você **não** mexe em `../../tests`.
 - Você lê a mensagem do teste (esperado contra obtido) e descobre **em qual parte do CLI** a regra deixa de ser cumprida.
 
 ## Um alerta honesto
@@ -7141,7 +7141,7 @@ A resposta da pergunta 4 diz que **operação** o código está fazendo no lugar
 
 ## 3. Onde procurar
 
-Pelo `README`, o pipeline é *ler → converter tipos → contar status → filtrar → agregar*, e a conversão de moeda é uma etapa com um arquivo próprio. Abra a pasta `src/onfly_report/services/` e pense: qual arquivo, pelo nome, cuida da conversão de moeda? (Você escreveu o equivalente no espelho.) Abra-o e **me conte o que está escrito na última linha da função**, copiando o texto.
+Pelo `README`, o pipeline é *ler → converter tipos → contar status → filtrar → agregar*, e a conversão de moeda é uma etapa com um arquivo próprio. Abra a pasta `../../src/onfly_report/services` e pense: qual arquivo, pelo nome, cuida da conversão de moeda? (Você escreveu o equivalente no espelho.) Abra-o e **me conte o que está escrito na última linha da função**, copiando o texto.
 
 Quando você me mandar a conta e a linha, eu explico a sintaxe de cada pedaço (`float(...)`, `str(...)`, `Decimal(...)`), e você diz o que precisa mudar.
 
@@ -7227,7 +7227,7 @@ Perfeito, Marcos. Vamos recomeçar do log, mas antes você precisa do **mapa dos
 
 ## O mapa do projeto
 
-Dentro de `src/onfly_report/`:
+Dentro de `../../src/onfly_report`:
 
 | Arquivo | Papel (pelo nome e pelo pipeline) |
 |---|---|
@@ -7279,18 +7279,18 @@ vamos la ele me mandou a reserva R-1 e R-2 vou olhar o cvs para saber os valores
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 00:17:17 UTC
 
-Boa iniciativa de ir conferir os dados, Marcos, mas o CSV que o teste usa **não é** o `data/reservas_hoteis.csv`.
+Boa iniciativa de ir conferir os dados, Marcos, mas o CSV que o teste usa **não é** o `../../data/reservas_hoteis.csv`.
 
 ## De onde vêm os dados do teste
 
 O log mostra a linha `tmp_path = WindowsPath('C:/Users/vinic/AppData/Local/Temp/...')`. Isso quer dizer que o teste **cria um CSV temporário**, numa pasta temporária, só com as linhas que ele define, e depois roda o CLI nesse arquivo. Os dados reais não entram.
 
-Para ver exatamente o que ele usa, abra dois arquivos em `tests/`. É só **leitura**, sem mudar nada:
+Para ver exatamente o que ele usa, abra dois arquivos em `../../tests`. É só **leitura**, sem mudar nada:
 
 | Arquivo | O que procurar |
 |---|---|
-| `tests/test_currency.py` | a lista de reservas que o teste monta: `R-1` e `R-2`, com moeda e valor |
-| `tests/helpers.py` | o dicionário `BASE`, que preenche os campos que o teste não informa (o `status`, por exemplo), e o texto do arquivo de câmbio (procure `rates_path.write_text(...)`) |
+| `../../tests/test_currency.py` | a lista de reservas que o teste monta: `R-1` e `R-2`, com moeda e valor |
+| `../../tests/helpers.py` | o dicionário `BASE`, que preenche os campos que o teste não informa (o `status`, por exemplo), e o texto do arquivo de câmbio (procure `rates_path.write_text(...)`) |
 
 ## O que anotar
 
@@ -7329,7 +7329,7 @@ Sem o status, você não sabe se as reservas entram no total. Sem as taxas, voc�
 
 ## O que fazer agora
 
-1. Abra `tests/helpers.py` (só leitura).
+1. Abra `../../tests/helpers.py` (só leitura).
 2. Procure `"status":` dentro do `BASE` e anote o valor.
 3. Procure o texto que começa com `currency,rate_to_brl` e anote as taxas de BRL, USD e EUR.
 
@@ -7372,7 +7372,7 @@ Então, o que o teste mostra é que **o CLI não faz** essa conta. É o código 
 
 ## Seguimos
 
-Abra `tests/helpers.py` e anote: o `"status":` do `BASE` e as três taxas de câmbio. Depois faça as duas contas (`100 × 5.42` e `100 ÷ 5.42`) e diga qual bate com `642.00` e qual com `118.45`.
+Abra `../../tests/helpers.py` e anote: o `"status":` do `BASE` e as três taxas de câmbio. Depois faça as duas contas (`100 × 5.42` e `100 ÷ 5.42`) e diga qual bate com `642.00` e qual com `118.45`.
 
 ### **Marcos** · 2026-11-15 00:38:11 UTC
 
@@ -7399,7 +7399,7 @@ Ela vai te dizer a segunda coisa:
 - `100 × 5.42` e `100 ÷ 5.42`: quanto dá cada uma?
 - Qual delas, somada aos 100 da reserva em BRL, resulta em **642.00**? E em **118.45**?
 
-Anote também, para o `README-ENTREGA.md`: *"conversor usa `float` onde o README manda `Decimal`"*. Ela vira a primeira linha da lista de defeitos.
+Anote também, para o `../README-ENTREGA.md`: *"conversor usa `float` onde o README manda `Decimal`"*. Ela vira a primeira linha da lista de defeitos.
 
 Me mande a função e as duas contas.
 
@@ -7445,7 +7445,7 @@ pytest tests/test_currency.py -q
 
 O esperado é `1 passed`. Se aparecer erro, copie a mensagem inteira.
 
-## Para o `README-ENTREGA.md`
+## Para o `../README-ENTREGA.md`
 
 Já pode anotar o **defeito 1**, em uma frase de causa raiz:
 
@@ -7503,13 +7503,13 @@ return amount * rate
 
 Essa é a forma que você escreveu no espelho, e é a mais legível para quem for revisar. Se concordar, simplifique a linha e rode de novo `pytest tests/test_currency.py -q`, esperando `1 passed`. Se preferir manter, o comportamento está certo, mas na entrevista uma versão mais enxuta mostra mais domínio.
 
-## Registro para o `README-ENTREGA.md`
+## Registro para o `../README-ENTREGA.md`
 
 **Defeito 1: conversão de moeda**
 
 - **Causa raiz:** o conversor dividia o valor pela taxa em vez de multiplicar, e passava o dinheiro por `float`.
 - **Como investiguei:** log do teste (esperado `642.00`, obtido `118.45`), conta à mão e comparação com a regra do `README`.
-- **Arquivo:** `src/onfly_report/services/currency_converter.py`.
+- **Arquivo:** `../../src/onfly_report/services/currency_converter.py`.
 
 ## Próxima falha
 
@@ -7575,14 +7575,14 @@ vou desfazer esse correção seria viavél subirmos para o github e irmos fazend
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 00:44:05 UTC
 
-Viável e recomendado, Marcos. Um histórico de commits mostra ao analista **como** você chegou à solução: o estado original, uma correção por commit e uma mensagem clara para cada uma. Também é o "como investiguei" do `README-ENTREGA.md` em forma de histórico. Custa uns 10 minutos, e o plano fica assim:
+Viável e recomendado, Marcos. Um histórico de commits mostra ao analista **como** você chegou à solução: o estado original, uma correção por commit e uma mensagem clara para cada uma. Também é o "como investiguei" do `../README-ENTREGA.md` em forma de histórico. Custa uns 10 minutos, e o plano fica assim:
 
 | Commit | Conteúdo |
 |---|---|
 | 1 | código **original**, como veio (com todos os testes falhando) |
 | 2 | defeito 1: câmbio |
 | 3, 4... | um commit por defeito, com o teste correspondente passando |
-| último | `README-ENTREGA.md`, declaração de uso de IA e sessão exportada |
+| último | `../README-ENTREGA.md`, declaração de uso de IA e sessão exportada |
 
 ## Passo 1: voltar o arquivo ao original
 
@@ -7611,7 +7611,7 @@ git status
 ```
 
 - **`git init`** cria o repositório local (a pasta oculta `.git`).
-- **`git status`** lista os arquivos que o Git viu. Confira que **não** aparecem `.venv/` nem `output/report.json`: o `.gitignore` do desafio já os ignora.
+- **`git status`** lista os arquivos que o Git viu. Confira que **não** aparecem `../../.venv` nem `output/report.json`: o `.gitignore` do desafio já os ignora.
 
 ## Passo 3: identificar-se (só uma vez)
 
@@ -7707,7 +7707,7 @@ Se preferir, pode ser em inglês, já que o seu inglês é avançado. O importan
 
 ## O que não preencher agora
 
-- **README, `.gitignore` e licença:** deixe tudo desmarcado, como combinamos. O projeto já tem esses arquivos, e marcar qualquer um deles cria um commit inicial no GitHub que causaria conflito com o seu primeiro envio.
+- **README, `../../.gitignore` e licença:** deixe tudo desmarcado, como combinamos. O projeto já tem esses arquivos, e marcar qualquer um deles cria um commit inicial no GitHub que causaria conflito com o seu primeiro envio.
 
 ## Depois de preencher
 
@@ -7805,7 +7805,7 @@ Se estiver em outra pasta (por exemplo `C:\Users\vinic>`), faça primeiro `cd C:
 
 Mantenha o venv ativo, porque você vai alternar entre `pytest` e `git` ao longo do trabalho, e assim não precisa reativar.
 
-Depois do `git init`, o comando `git status` deve listar os arquivos do projeto como *untracked*, **sem** `.venv/` nem `output/report.json` (o `.gitignore` os esconde). Me mande o que aparecer.
+Depois do `git init`, o comando `git status` deve listar os arquivos do projeto como *untracked*, **sem** `../../.venv` nem `output/report.json` (o `.gitignore` os esconde). Me mande o que aparecer.
 
 ### **Marcos** · 2026-11-15 00:54:01 UTC
 
@@ -7852,7 +7852,7 @@ Deve mostrar duas linhas, uma `(fetch)` e outra `(push)`, com o seu endereço.
 ## Antes do primeiro commit
 
 1. Confirme que o `currency_converter.py` está com a linha **original** (`float(amount) / float(rate)`). Se ainda não voltou, o `pytest tests/test_currency.py -q` mostra `1 passed`, e queremos `1 failed`.
-2. Rode `git status` e me diga se aparecem `.venv` ou `output/report.json` na lista (não devem aparecer).
+2. Rode `git status` e me diga se aparecem `.venv` ou `../../output/report.json` na lista (não devem aparecer).
 
 Me mande a saída do `git remote -v`, o resultado do pytest do câmbio e o `git status`.
 
@@ -7888,13 +7888,13 @@ O esperado é **`1 failed`**, com `118.45`. Se aparecer `1 passed`, a correção
 git status
 ```
 
-Você deve ver uma lista em vermelho de arquivos *untracked*, como `README.md`, `pyproject.toml`, `requirements.txt`, `requirements-dev.txt`, `data/`, `src/`, `tests/`, `entrega/` e `output/` (ou só `output/.gitkeep`).
+Você deve ver uma lista em vermelho de arquivos *untracked*, como `../../README.md`, `pyproject.toml`, `requirements.txt`, `requirements-dev.txt`, `data/`, `src/`, `tests/`, `entrega/` e `output/` (ou só `output/.gitkeep`).
 
-Repare no que **não** deve aparecer: `.venv/` e `output/report.json`. O `.gitignore` do desafio os esconde.
+Repare no que **não** deve aparecer: `../../.venv` e `output/report.json`. O `.gitignore` do desafio os esconde.
 
-## Sobre a pasta `output/`
+## Sobre a pasta `../../output`
 
-O `output/report.json` que o CLI gerou antes é ignorado pelo Git. Isso é o esperado: o relatório é um resultado, e não parte do código.
+O `../../output/report.json` que o CLI gerou antes é ignorado pelo Git. Isso é o esperado: o relatório é um resultado, e não parte do código.
 
 ## O que me mandar
 
@@ -7956,13 +7956,13 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 00:56:34 UTC
 
-Está tudo como esperado, Marcos: o teste de câmbio falha com `118.45` (o código original), e o `git status` não lista `.venv/` nem `output/report.json`.
+Está tudo como esperado, Marcos: o teste de câmbio falha com `118.45` (o código original), e o `git status` não lista `../../.venv` nem `output/report.json`.
 
-Só há um item a tratar antes do commit: o **`.idea/`**, a pasta de configurações do PyCharm. Ela é do **seu** computador e não deve ir para o GitHub.
+Só há um item a tratar antes do commit: o **`../../.idea`**, a pasta de configurações do PyCharm. Ela é do **seu** computador e não deve ir para o GitHub.
 
-## Parte A: esconder o `.idea/` sem mexer no `.gitignore`
+## Parte A: esconder o `../../.idea` sem mexer no `.gitignore`
 
-O `.gitignore` do desafio faz parte do projeto original, então vamos deixá-lo como está. O Git tem um arquivo de exclusões **só local**, que não entra nos commits:
+O `../../.gitignore` do desafio faz parte do projeto original, então vamos deixá-lo como está. O Git tem um arquivo de exclusões **só local**, que não entra nos commits:
 
 ```
 Add-Content .git/info/exclude ".idea/"
@@ -7974,7 +7974,7 @@ Confira:
 git status
 ```
 
-O `.idea/` deve ter sumido da lista de *untracked*.
+O `../../.idea` deve ter sumido da lista de *untracked*.
 
 ## Parte B: o commit 1
 
@@ -7988,7 +7988,7 @@ Prepara todos os arquivos visíveis para o commit.
 git status
 ```
 
-Agora a lista deve estar em **verde**, em *Changes to be committed*. Confira que **não** há `.venv`, `.idea` nem `output/report.json`.
+Agora a lista deve estar em **verde**, em *Changes to be committed*. Confira que **não** há `.venv`, `.idea` nem `../../output/report.json`.
 
 ```
 git commit -m "Estado original do desafio (testes falhando)"
@@ -8044,7 +8044,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 00:57:39 UTC
 
-O `.idea/` sumiu da lista, Marcos: a exclusão local funcionou. Agora a **Parte B**.
+O `../../.idea` sumiu da lista, Marcos: a exclusão local funcionou. Agora a **Parte B**.
 
 ## Passo 1: preparar os arquivos
 
@@ -8062,9 +8062,9 @@ git status
 
 Agora a lista aparece em **verde**, sob *Changes to be committed*, com `new file:` na frente de cada arquivo. Confira que **não** aparecem:
 
-- `.venv/`
-- `.idea/`
-- `output/report.json` (o `output/.gitkeep` pode aparecer, e está certo)
+- `../../.venv`
+- `../../.idea`
+- `../../output/report.json` (o `output/.gitkeep` pode aparecer, e está certo)
 - pastas `__pycache__`
 
 Se aparecer algum deles, **pare** e me avise antes do commit.
@@ -8190,14 +8190,14 @@ To https://github.com/mvmmoreira/onfly-desafio-reservas.git
 
 Commit 1 gravado e enviado, Marcos: `c7d33a6`, 31 arquivos, e `main -> main` no fim do `push`. Dois pontos que vale notar na saída:
 
-- Os arquivos que **não** deviam entrar ficaram de fora: nada de `.venv`, `.idea` nem `output/report.json`.
-- Os testes (`tests/`) estão no commit 1 **sem alteração**, o que será importante para mostrar ao analista que você não mexeu neles.
+- Os arquivos que **não** deviam entrar ficaram de fora: nada de `.venv`, `.idea` nem `../../output/report.json`.
+- Os testes (`../../tests`) estão no commit 1 **sem alteração**, o que será importante para mostrar ao analista que você não mexeu neles.
 
 Abra a página do repositório no GitHub (`github.com/mvmmoreira/onfly-desafio-reservas`) e atualize: devem aparecer os arquivos e, no topo, o commit **"Desafio em estado original"**. Confira também que ele está como **Public**.
 
 ## Commit 2: a correção do câmbio
 
-Reaplique a correção no `src/onfly_report/services/currency_converter.py`. A última linha da função volta a ser:
+Reaplique a correção no `../../src/onfly_report/services/currency_converter.py`. A última linha da função volta a ser:
 
 ```python
 return amount * rate
@@ -8373,19 +8373,19 @@ This session is being continued from a previous conversation that ran out of con
 
 Summary:
 1. Primary Request and Intent:
-   Marcos Vinicius Moreira (computer engineering graduate, Java/Spring Boot background, zero Python experience) is doing the Onfly technical challenge: fix defects in an existing Python CLI that consolidates hotel reservations (CSV → JSON report), make the provided pytest tests pass without modifying them, and deliver a public GitHub repo with `entrega/README-ENTREGA.md` (defects fixed, one-sentence root cause each, how investigated, how to validate, pytest result), `entrega/uso-de-ia/sessao.md` (exported session) and `entrega/uso-de-ia/declaracao.md` (tool/model used; what AI did vs what he did). The link goes via the Onfly form. Deadline: 4 days from 11/11/2026 (email received 11/11 at 15h); he decided to treat Saturday 14/11 as the last day (likely hard limit Sunday 15/11 ~15h; he was asked to confirm the exact date/time in the email and has not yet reported it).
+   Marcos Vinicius Moreira (computer engineering graduate, Java/Spring Boot background, zero Python experience) is doing the Onfly technical challenge: fix defects in an existing Python CLI that consolidates hotel reservations (CSV → JSON report), make the provided pytest tests pass without modifying them, and deliver a public GitHub repo with `../README-ENTREGA.md` (defects fixed, one-sentence root cause each, how investigated, how to validate, pytest result), `entrega/uso-de-ia/sessao.md` (exported session) and `entrega/uso-de-ia/declaracao.md` (tool/model used; what AI did vs what he did). The link goes via the Onfly form. Deadline: 4 days from 11/11/2026 (email received 11/11 at 15h); he decided to treat Saturday 14/11 as the last day (likely hard limit Sunday 15/11 ~15h; he was asked to confirm the exact date/time in the email and has not yet reported it).
    Agreed teaching mode: I am tech lead/mentor/professor; he writes the code and understands each line; I explain Python syntax, compare with Java (Decimal↔BigDecimal, pytest↔JUnit, etc.), give small generic examples and hints, and must NOT reveal which line is defective or hand over the solution (the AI declaration must stay true). He wants to be very specific and didactic, read the README section by section, then execute stage by stage, and send one failing-test log at a time. He asked me not to quiz him during plain README reading, but defect investigation stays his job. He also asked for good Git hygiene: one commit per defect pushed to a public GitHub repo, to show organization to the analysts. Responses in Portuguese, cordial and direct.
 
 2. Key Technical Concepts:
    - Pipeline: ler CSV → converter tipos → contar status (all reservations) → filtrar CONFIRMED → agregar (noites, valores, by_month, top_hotels) → serializar JSON.
    - Business rules (README): only CONFIRMED is billable; CANCELLED/NO_SHOW count in total_reservations and status counts only; room_nights = (checkout − checkin).days × rooms (non-inclusive, month/year turns); amount × rate_to_brl; Decimal never float; round only at serialization, 2 places, ROUND_HALF_UP; average = total_amount/total_room_nights ("0.00" if no nights); by_month ascending, uses check-in month; top_hotels by total_brl desc, tie by hotel_id asc; JSON money as strings with 2 decimals; exit codes 0/2/1; `--top` ≥ 1, default 5; `generated_at` fixed −03:00.
    - Python concepts taught: venv, pip, requirements-dev.txt, packages/`__init__.py`, dataclass(frozen=True), Decimal from string (Decimal(0.1) vs Decimal('0.1')), quantize/ROUND_HALF_UP, csv.DictReader, with/try/except, import relative (`..`), dict `counts[key] += 1`, list/dict differences, `.days` vs `.day`, pytest (assert, failing logs, tmp_path, helpers.run_cli), PYTHONPATH/`sys.path`, PowerShell vs Linux commands, ruff, Git (init, remote add, add, commit, push, log --oneline, `.git/info/exclude`).
-   - Investigation method per failing test: read pytest log (E lines: obtained vs expected) → docstring → hand-calculate with test data and `tests/helpers.py` BASE/rates (BRL 1.000000, USD 5.420000, EUR 5.880000; BASE status CONFIRMED) → identify what operation differs → pick file with file map → fix → run that single test → record root cause for README-ENTREGA.md → commit with two `-m` (short title + body) and push.
+   - Investigation method per failing test: read pytest log (E lines: obtained vs expected) → docstring → hand-calculate with test data and `../../tests/helpers.py` BASE/rates (BRL 1.000000, USD 5.420000, EUR 5.880000; BASE status CONFIRMED) → identify what operation differs → pick file with file map → fix → run that single test → record root cause for README-ENTREGA.md → commit with two `-m` (short title + body) and push.
    - Distinction taught: exceptions (invalid data, `InputFileError`) vs business rule policy (`is_billable` returns bool).
 
 3. Files and Code Sections:
-   - `C:\onfly-desafio` (real project), Git repo on branch `main`, remote `origin` = https://github.com/mvmmoreira/onfly-desafio-reservas.git (public). `.idea/` excluded locally via `.git/info/exclude`; `.gitignore` of the challenge untouched (ignores .venv, output/*, etc.).
-   - `src/onfly_report/services/currency_converter.py` (fixed; defect 1). Current content:
+   - `C:\onfly-desafio` (real project), Git repo on branch `main`, remote `origin` = https://github.com/mvmmoreira/onfly-desafio-reservas.git (public). `../../.idea` excluded locally via `.git/info/exclude`; `.gitignore` of the challenge untouched (ignores .venv, output/*, etc.).
+   - `../../src/onfly_report/services/currency_converter.py` (fixed; defect 1). Current content:
      ```python
      """Conversão de valores para BRL."""
 
@@ -8400,14 +8400,14 @@ Summary:
      ```
      (original last line: `return Decimal(str(float(amount) / float(rate)))`).
    - Other real-project files read earlier (not yet investigated with Marcos, defects not revealed): `status_policy.py`, `stay_calculator.py`, `report_builder.py`, `csv_reservation_repository.py`, `cli.py`, `row_parser.py`, `csv_rate_repository.py`, `models.py`. Real code known to me (do NOT disclose defects): is_billable in the original uses a negative comparison; stay calculator uses day-of-month subtraction; report_builder sorts top hotels ascending and has other aggregation points; csv_reservation_repository stops reading at 200 rows (CLI printed "Reservas: 200" while the CSV has 300 reservations). These are for guiding with questions only, never to be stated as findings.
-   - Tests (must not be altered): `tests/helpers.py`, `test_currency.py`, `test_nights.py`, `test_regression_report.py`, `test_status_rules.py`, `test_top_hotels.py`.
-   - Mirror project `C:\onfly_teste_v1` (practice only, abandoned for time): has `.venv`, `data/`, `src/onfly_report/` with models, exceptions, row_parser, status_policy, stay_calculator, currency_converter, repository (named `repository`), report_builder with `count_by_status` and `total_confirmed`; the last one still had a bug (`reservation.rates`).
+   - Tests (must not be altered): `../../tests/helpers.py`, `test_currency.py`, `test_nights.py`, `test_regression_report.py`, `test_status_rules.py`, `test_top_hotels.py`.
+   - Mirror project `C:\onfly_teste_v1` (practice only, abandoned for time): has `.venv`, `../../data`, `src/onfly_report/` with models, exceptions, row_parser, status_policy, stay_calculator, currency_converter, repository (named `repository`), report_builder with `count_by_status` and `total_confirmed`; the last one still had a bug (`reservation.rates`).
    - Spreadsheet artifact "Plano Onfly - Sábado 14/11": https://claude.ai/artifact/NcnYrBQskQffbpUsULuCuL (two sheets, private).
    - Git history: `c7d33a6 Desafio em estado original`; `b1ae185 Corrige conversão de câmbio,a conta dividia o valor pela taxa em vez de multiplicar e passava por float. amount e rate já chegam como Decimal então a função só multiplica, sem converter de novo.` (pushed, origin/main up to date).
 
 4. Errors and fixes:
    - Mirror setup: typo `.venc` instead of `.venv`; wrong folder when activating; `onfly-report` (hyphen) folder instead of `onfly_report`; `repository` vs `repositories`; wrong `__version__` "0.1.0"; various typos (`line_number` vs `line_num`, `reservation.rates`, etc.). He fixed each by comparing to my hints.
-   - Real project: ran `pip install -r requirements.txt` twice instead of `requirements-dev.txt` (fixed by adding `-dev`); copied README command with escaped `\_` and `\\` (PowerShell errors) → used one-line command; `git add origin ...` instead of `git remote add origin ...` → corrected.
+   - Real project: ran `pip install -r requirements.txt` twice instead of `../../requirements-dev.txt` (fixed by adding `-dev`); copied README command with escaped `\_` and `\\` (PowerShell errors) → used one-line command; `git add origin ...` instead of `git remote add origin ...` → corrected.
    - Defect 1 (currency): division instead of multiplication, plus float; fixed with `return amount * rate`; test passes.
    - I corrected myself once about PyCharm "Community Edition" and about `ruff` default rules not flagging blank lines (project config selects E,F,I).
 
@@ -8438,8 +8438,8 @@ Summary:
 
 7. Pending Tasks:
    - Investigate and fix the remaining 4 failing tests, one at a time (`test_nights.py`, `test_status_rules.py`, `test_top_hotels.py`, `test_regression_report.py`), each with its own commit (title via first `-m`, explanation via second `-m`) and push.
-   - Validate with the README sample (`data/exemplo-validacao.csv`; expected values listed in the analysis) and run the full CLI command; compare the rules in the README against the code even for rules without a test (provided tests do not cover everything, e.g. by_month, rounding, repository row limits, etc. — to be discovered by Marcos through guided questions, not stated by me).
-   - Write `entrega/README-ENTREGA.md` (defects, one-sentence root cause each, how investigated, how to validate, pytest result), export the session to `entrega/uso-de-ia/sessao.md`, write `declaracao.md` (tool: Claude Code / Claude; model per session config `claude-sonnet-5-5`; what AI did = explained syntax/concepts and guided with questions, what he did = identified and wrote the fixes; the mirror project was practice).
+   - Validate with the README sample (`../../data/exemplo-validacao.csv`; expected values listed in the analysis) and run the full CLI command; compare the rules in the README against the code even for rules without a test (provided tests do not cover everything, e.g. by_month, rounding, repository row limits, etc. — to be discovered by Marcos through guided questions, not stated by me).
+   - Write `../README-ENTREGA.md` (defects, one-sentence root cause each, how investigated, how to validate, pytest result), export the session to `entrega/uso-de-ia/sessao.md`, write `uso_de_ia/declaracao.md` (tool: Claude Code / Claude; model per session config `claude-sonnet-5-5`; what AI did = explained syntax/concepts and guided with questions, what he did = identified and wrote the fixes; the mirror project was practice).
    - Final push to the public GitHub repo, check that it is public, send the link via the Onfly form well before ~15h on Sunday 15/11; confirm the exact deadline in the email (still unanswered).
    - Pending small items he has not answered: exact deadline wording from the email; `git --version` output; offer to update the planilha (unanswered).
 
@@ -8561,7 +8561,7 @@ vamos colocar uma observação no commit 2, emtão ao proximo erro:
 
 Boa ideia registrar isso. Uma ressalva de Git: o commit `b1ae185` (o "commit 2" do seu `git log`) já foi enviado ao GitHub. Reescrevê-lo com `--amend` exigiria `push --force`, e isso bagunça o histórico público. Não vale o risco. Há dois lugares melhores:
 
-1. **No `README-ENTREGA.md`**, na seção do defeito 1. É onde o analista vai ler, e é o lugar certo para a observação:
+1. **No `../README-ENTREGA.md`**, na seção do defeito 1. É onde o analista vai ler, e é o lugar certo para a observação:
    > Efeito colateral: `test_regression_report_on_sample` passou junto com `test_currency`, porque a única reserva em moeda estrangeira (R-3, USD) dependia da conversão. Os demais testes continuam falhando por causas independentes.
 
 2. **No corpo do próximo commit**, se a observação disser respeito a ele.
@@ -8731,7 +8731,7 @@ não fiz os testes que você pediu pois acreditei no meu palpite, dessa vez por 
 
 Corrigiu, e o teste passou. A conta agora segue a regra do README: noites = (checkout − checkin) em dias, vezes quartos.
 
-Só preciso acertar a **explicação**, porque ela vai para o `README-ENTREGA.md` e o analista vai ler. Você disse que o erro era o `.day` dentro do parêntese em vez de fora. Não é a posição do parêntese: o `((checkout - checkin).days)` tem parêntese até sobrando, e o `(checkout - checkin).days` sem o par externo daria o mesmo resultado. O que mudou foi **o que está sendo calculado**:
+Só preciso acertar a **explicação**, porque ela vai para o `../README-ENTREGA.md` e o analista vai ler. Você disse que o erro era o `.day` dentro do parêntese em vez de fora. Não é a posição do parêntese: o `((checkout - checkin).days)` tem parêntese até sobrando, e o `(checkout - checkin).days` sem o par externo daria o mesmo resultado. O que mudou foi **o que está sendo calculado**:
 
 | | Antes | Depois |
 |---|---|---|
@@ -9086,7 +9086,7 @@ Certo, vamos olhar os resultados com os próprios olhos. Antes, confirme que a l
 
 ## Validação com a amostra do README
 
-A amostra é o `data/exemplo-validacao.csv`: 12 reservas, de propósito com os casos difíceis (virada de mês, dólar, euro, cancelada, no-show, vírgula dentro do nome do hotel). Rode, em uma linha só, no PowerShell:
+A amostra é o `../../data/exemplo-validacao.csv`: 12 reservas, de propósito com os casos difíceis (virada de mês, dólar, euro, cancelada, no-show, vírgula dentro do nome do hotel). Rode, em uma linha só, no PowerShell:
 
 ```
 python -m onfly_report --input data\exemplo-validacao.csv --rates data\taxas_cambio.csv --output output\amostra.json
@@ -9201,7 +9201,7 @@ Sua pergunta ("tinha algum outro parâmetro?"): sim, a CLI tem quatro, e só doi
 |---|---|---|
 | `--input` | sim | (CSV de reservas) |
 | `--rates` | sim | (CSV de taxas) |
-| `--output` | não | `output/report.json` |
+| `--output` | não | `../../output/report.json` |
 | `--top` | não | `5` |
 
 Se você quiser ver o ranking com 3 hotéis, por exemplo, acrescente `--top 3`.
@@ -9548,9 +9548,9 @@ Li de novo o enunciado do desafio (a seção 7 do briefing) e cruzei com o que j
 | Item do checklist do enunciado | Estado |
 |---|---|
 | `pytest -q` passa, sem alterar os testes | feito (você confirmou) |
-| CLI roda e gera `output/report.json` | rodando; falta validar o JSON dos dados reais |
+| CLI roda e gera `../../output/report.json` | rodando; falta validar o JSON dos dados reais |
 | Relatório segue o contrato | amostra bateu; dados reais ainda não |
-| `entrega/README-ENTREGA.md` | **pendente** (a pasta só tem `.gitkeep`) |
+| `../README-ENTREGA.md` | **pendente** (a pasta só tem `.gitkeep`) |
 | Sessão + declaração em `entrega/uso-de-ia/` | **pendente** |
 | Repositório público e link enviado no formulário | repositório criado; envio pendente |
 
@@ -9565,7 +9565,7 @@ O enunciado avisa: *"A amostra cobre apenas parte dos cenários; use as regras a
 
 ## Pendências de entrega
 
-- `README-ENTREGA.md`: defeitos, causa raiz em uma frase cada, como investigou, como validar, resultado do `pytest`.
+- `../README-ENTREGA.md`: defeitos, causa raiz em uma frase cada, como investigou, como validar, resultado do `pytest`.
 - `declaracao.md`: ferramenta e modelo usados, o que a IA fez e o que foi seu.
 - Exportar a sessão para `uso-de-ia/sessao.md`. Isso a gente resolve amanhã, perto do fim, para exportar a conversa completa.
 - Conferir no GitHub se o repositório está **público** e se o `git log` mostra um commit por defeito.
@@ -9574,7 +9574,7 @@ O enunciado avisa: *"A amostra cobre apenas parte dos cenários; use as regras a
 ## Plano sugerido
 
 - **Agora, até uns 45 minutos:** itens 1 a 3 do código. Comece pelo `Reservas: 300` e pelo `Select-String` do `float`.
-- **Domingo de manhã:** `README-ENTREGA.md`, `declaracao.md`, exportar a sessão, push final, conferir o repositório.
+- **Domingo de manhã:** `../README-ENTREGA.md`, `uso_de_ia/declaracao.md`, exportar a sessão, push final, conferir o repositório.
 - **Antes das 12h:** enviar o link pelo formulário, com folga em relação às 15h.
 
 Me responda duas coisas: se o conserto das 200 linhas já está feito e commitado, e o que diz o e-mail sobre a data limite.
@@ -9606,14 +9606,14 @@ Só o necessário para concluir, na ordem em que fazer.
 
 ## Etapa 3: documentação (domingo de manhã)
 
-- [ ] `entrega/README-ENTREGA.md`: um bloco por defeito (causa raiz em uma frase, como investiguei, arquivo e commit), como validar e resultado do `pytest -q`. Inclua a observação do teste de regressão no defeito 1.
+- [ ] `../README-ENTREGA.md`: um bloco por defeito (causa raiz em uma frase, como investiguei, arquivo e commit), como validar e resultado do `pytest -q`. Inclua a observação do teste de regressão no defeito 1.
 - [ ] `entrega/uso-de-ia/declaracao.md`: ferramenta e modelo, o que a IA fez (explicar sintaxe e conceitos, guiar com perguntas) e o que foi seu (identificar e escrever as correções).
 - [ ] `entrega/uso-de-ia/sessao.md`: exportar esta conversa, por último, para ela incluir tudo.
 
 ## Etapa 4: entrega
 
 - [ ] `git status` limpo, push final, `git log --oneline` com um commit por defeito.
-- [ ] Abrir o repositório no GitHub em aba anônima e confirmar que está **público** e com a pasta `entrega/` preenchida.
+- [ ] Abrir o repositório no GitHub em aba anônima e confirmar que está **público** e com a pasta `..` preenchida.
 - [ ] Enviar o link pelo formulário da Onfly, com folga antes do prazo.
 
 ## Fora da lista, de propósito
@@ -9637,7 +9637,7 @@ Não quebra, e é bom você ter perguntado antes de decidir. Releia o trecho exa
 > **O que não pode mudar**
 > - O comando e os argumentos do CLI.
 > - O schema e a semântica do relatório acima.
-> - Os arquivos `data/reservas_hoteis.csv` e `data/taxas_cambio.csv`.
+> - Os arquivos `../../data/reservas_hoteis.csv` e `data/taxas_cambio.csv`.
 >
 > Você pode reorganizar o código interno, adicionar arquivos, melhorar logs e adicionar testes. Os testes fornecidos devem permanecer inalterados.
 
@@ -9672,7 +9672,7 @@ não sei oq isso nmudaria na realização da atividade
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 02:36:19 UTC
 
-O que muda é o **resultado que será avaliado**. Pense em como a Onfly vai corrigir o seu trabalho: o enunciado diz que *"a correção verifica se o relatório segue o documento"*. O relatório de verdade é o gerado com `data/reservas_hoteis.csv`, o arquivo de 300 reservas, e não o das 12 linhas da amostra.
+O que muda é o **resultado que será avaliado**. Pense em como a Onfly vai corrigir o seu trabalho: o enunciado diz que *"a correção verifica se o relatório segue o documento"*. O relatório de verdade é o gerado com `../../data/reservas_hoteis.csv`, o arquivo de 300 reservas, e não o das 12 linhas da amostra.
 
 Hoje, com o limite, o relatório dos dados reais sai com informação errada:
 
@@ -9688,7 +9688,7 @@ Ou seja, **todos os campos do relatório ficam errados**, mesmo com os 5 testes 
 Resumindo o que isso muda na atividade:
 
 - **Sem corrigir:** os testes passam, mas o relatório que a Onfly gerar com os dados reais não bate com o esperado. É exatamente o tipo de defeito que o desafio quer ver se você acha, justamente por **não ter teste** que o denuncie.
-- **Corrigindo:** o relatório fica correto e você ainda mostra que verificou além dos testes, o que vale no `README-ENTREGA.md`.
+- **Corrigindo:** o relatório fica correto e você ainda mostra que verificou além dos testes, o que vale no `../README-ENTREGA.md`.
 
 Se a sua dúvida era outra, por exemplo "isso entra na lista de defeitos que eu preciso documentar?", a resposta é sim: é o **quarto defeito**, ao lado do câmbio, das noites, do status e do ranking. Os quatro primeiros têm teste; este não tem, e é o que mais importa para mostrar atenção.
 
@@ -10056,7 +10056,7 @@ Os 5 testes fornecidos usam de 1 a 4 reservas. O `break` só atua depois da 200�
 > **Correção:** removi o limite, e o `for` lê o arquivo até o fim. Trocar 200 por outro número não resolveria, porque o README define `total_reservations` como o número de reservas do arquivo.
 > **Efeito medido:** reservas 200 → 300, confirmadas 153 → 235, noites 909 → 1347, total 249.543,70 → 396.170,00.
 
-Adapte com as suas palavras antes de colocar no `README-ENTREGA.md`. Os números da tabela vieram das suas execuções, então estão certos.
+Adapte com as suas palavras antes de colocar no `../README-ENTREGA.md`. Os números da tabela vieram das suas execuções, então estão certos.
 
 Quando fizer o commit, me mande o `git log --oneline`.
 
@@ -10081,10 +10081,10 @@ Aqui está o trecho de entrega do enunciado, lido item por item e cruzado com o 
 | # | Entregável | Formato exigido | Estado |
 |---|---|---|---|
 | 1 | Código corrigido, `pytest -q` passando, testes originais intocados | repositório | falta confirmar o commit do 4º defeito |
-| 2 | `entrega/README-ENTREGA.md` | Markdown, com **5 partes**: defeitos corrigidos; causa raiz em **uma frase** por defeito; como investigou; como validar; resultado do `pytest` | pendente |
+| 2 | `../README-ENTREGA.md` | Markdown, com **5 partes**: defeitos corrigidos; causa raiz em **uma frase** por defeito; como investigou; como validar; resultado do `pytest` | pendente |
 | 3 | `entrega/uso-de-ia/declaracao.md` | Markdown, com **2 partes**: ferramenta e modelo usados; o que a IA fez e o que você fez | pendente |
 | 4 | `entrega/uso-de-ia/sessao.md` | exportação **no formato nativo da ferramenta**; aceita `.md`, `.txt` ou `.jsonl`; várias sessões viram `sessao-01.md`, `sessao-02.md` | pendente |
-| 5 | Repositório público no GitHub, com a pasta `entrega/` | link enviado **pelo forms** | repositório criado; envio pendente |
+| 5 | Repositório público no GitHub, com a pasta `..` | link enviado **pelo forms** | repositório criado; envio pendente |
 
 Um ponto importante do item 2: a investigação **tem que estar no README-ENTREGA nos dois caminhos** (com ou sem IA). Não é opcional, e é o que o analista mais vai ler.
 
@@ -10099,10 +10099,10 @@ Um ponto importante do item 2: a investigação **tem que estar no README-ENTREG
 ## 3. Checklist final do enunciado, traduzido para o seu caso
 
 - [ ] **Python 3.11+**: você usou 3.15.2; registre a versão no README-ENTREGA.
-- [ ] **O comando gera `output/report.json` sem erro**: o comando do README usa `PYTHONPATH=src` (sintaxe de Linux). No PowerShell, o seu comando `python -m onfly_report ...` funcionou. Documente os **dois** em "como validar", para o analista rodar no sistema dele.
+- [ ] **O comando gera `../../output/report.json` sem erro**: o comando do README usa `PYTHONPATH=src` (sintaxe de Linux). No PowerShell, o seu comando `python -m onfly_report ...` funcionou. Documente os **dois** em "como validar", para o analista rodar no sistema dele.
 - [ ] **O relatório segue o contrato:** confira o `report.json` dos dados reais (strings com 2 casas, 5 hotéis, meses crescentes).
-- [ ] **`pytest -q` passa**, com os testes originais intocados (`git status` não deve mostrar nada em `tests/`).
-- [ ] `README-ENTREGA.md` preenchido.
+- [ ] **`pytest -q` passa**, com os testes originais intocados (`git status` não deve mostrar nada em `../../tests`).
+- [ ] `../README-ENTREGA.md` preenchido.
 - [ ] Sessão e declaração em `entrega/uso-de-ia/`.
 - [ ] Repositório **público** e link enviado.
 
@@ -10645,7 +10645,7 @@ print(Decimal("0").quantize(Decimal("0.01")))
 
 Resultado esperado: `0.00`. Responda: o que apareceu nos dois testes, e por que o `if` não pode ser retirado?
 
-Com essas duas respostas corrigidas, a Etapa 1 está encerrada. Em seguida começamos o `README-ENTREGA.md`, mas só depois de você confirmar que o `git status` está limpo e que o `git log` no GitHub mostra o `f04f91c` como último commit.
+Com essas duas respostas corrigidas, a Etapa 1 está encerrada. Em seguida começamos o `../README-ENTREGA.md`, mas só depois de você confirmar que o `git status` está limpo e que o `git log` no GitHub mostra o `f04f91c` como último commit.
 
 ### **Marcos** · 2026-11-15 03:32:59 UTC
 
@@ -10700,7 +10700,7 @@ value.setScale(2, RoundingMode.HALF_UP).toString();
 - Há **um único ponto** que formata dinheiro, então todos os campos saem com o mesmo padrão (`summary`, `by_month` e `top_hotels`).
 - Os cálculos intermediários continuam em `Decimal` com precisão total, e só no fim vira texto com 2 casas. Foi isso que explicou o centavo de diferença entre o total e a soma dos meses.
 
-Para o `README-ENTREGA.md`, essa regra entra em "como validar" com uma linha: *"o formato monetário (2 casas, half-up) é feito em `format_money` e foi verificado no `report.json`"*.
+Para o `../README-ENTREGA.md`, essa regra entra em "como validar" com uma linha: *"o formato monetário (2 casas, half-up) é feito em `format_money` e foi verificado no `report.json`"*.
 
 Se a sua pergunta era outra, por exemplo por que `str()` e não um número, ou por que um molde em vez de `round()`, me diga qual, que eu respondo isso especificamente.
 
@@ -10754,7 +10754,7 @@ Nada de decorar. O que importa é o raciocínio:
 - O teste 1 mostra que o modo faz diferença em um caso concreto, e é por isso que o enunciado exige *half-up*.
 - O teste 2 mostra que o `0` vira `"0.00"` pelo próprio `quantize`, sem nenhum `if` extra para formatar.
 
-Com essas três respostas, a Etapa 1 está fechada, e a gente passa a escrever o `README-ENTREGA.md`.
+Com essas três respostas, a Etapa 1 está fechada, e a gente passa a escrever o `../README-ENTREGA.md`.
 
 ### **Marcos** · 2026-11-15 03:35:13 UTC
 
@@ -10817,7 +10817,7 @@ o que desse teste se refere as nossas entregas
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 03:36:01 UTC
 
-Direto: **não tem relação com nenhuma entrega.** O enunciado pede o código corrigido, o `README-ENTREGA.md`, a declaração, a sessão e o repositório, e esse teste não faz parte de nada disso. Ele era só uma ajuda para você **entender** a regra do arredondamento, e é opcional.
+Direto: **não tem relação com nenhuma entrega.** O enunciado pede o código corrigido, o `../README-ENTREGA.md`, a declaração, a sessão e o repositório, e esse teste não faz parte de nada disso. Ele era só uma ajuda para você **entender** a regra do arredondamento, e é opcional.
 
 A regra já está verificada de outra forma, que vale mais do que o teste:
 
@@ -10825,7 +10825,7 @@ A regra já está verificada de outra forma, que vale mais do que o teste:
 - A amostra do enunciado também bateu (`270.21`, `1084.00`, `882.00`...).
 - Você leu `format_money` e confirmou que ele formata com 2 casas e é chamado só ao montar o JSON.
 
-Para o `README-ENTREGA.md`, isso basta. Você pode pular o teste do `2.345`, a menos que queira entendê-lo melhor, o que é válido, mas fora do caminho crítico.
+Para o `../README-ENTREGA.md`, isso basta. Você pode pular o teste do `2.345`, a menos que queira entendê-lo melhor, o que é válido, mas fora do caminho crítico.
 
 A única parte pendente da Etapa 1 que ainda conta é a leitura da média sem noites, e ela já está resolvida na conversa: o `if total_nights > 0` evita a divisão por zero e o `format_money` transforma `Decimal("0")` em `"0.00"`. Anote só isso.
 
@@ -10836,7 +10836,7 @@ A única parte pendente da Etapa 1 que ainda conta é a leitura da média sem no
 | Código corrigido, `pytest -q` passando | feito |
 | Relatório dos dados reais no padrão | verificado |
 | Contrato do CLI (códigos de saída) | verificado |
-| `entrega/README-ENTREGA.md` | **próximo passo** |
+| `../README-ENTREGA.md` | **próximo passo** |
 | `entrega/uso-de-ia/declaracao.md` | pendente |
 | `entrega/uso-de-ia/sessao.md` | pendente (por último) |
 | Push final, repositório público, formulário | pendente |
@@ -10856,7 +10856,7 @@ vamos seguir nossas etapas da entrega
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 03:37:05 UTC
 
-Vamos por ordem. Primeira entrega: o `entrega/README-ENTREGA.md`. Você escreve, eu reviso. Antes de abrir o arquivo, confirme que o ponto de partida está limpo:
+Vamos por ordem. Primeira entrega: o `../README-ENTREGA.md`. Você escreve, eu reviso. Antes de abrir o arquivo, confirme que o ponto de partida está limpo:
 
 ```
 git status
@@ -10867,13 +10867,13 @@ Esperado: árvore limpa e `5 passed`.
 
 ## 1. Criar o arquivo
 
-A pasta `entrega/` já existe (tem só o `.gitkeep`). No PowerShell:
+A pasta `..` já existe (tem só o `.gitkeep`). No PowerShell:
 
 ```
 New-Item entrega\README-ENTREGA.md -ItemType File
 ```
 
-Abra no PyCharm (ele aparece em `entrega/`, e o PyCharm mostra uma prévia de Markdown ao lado). Se você nunca escreveu Markdown, são só quatro recursos:
+Abra no PyCharm (ele aparece em `..`, e o PyCharm mostra uma prévia de Markdown ao lado). Se você nunca escreveu Markdown, são só quatro recursos:
 
 | Você quer | Escreva |
 |---|---|
@@ -10936,7 +10936,7 @@ me envie a estrutura do arquivo, com o espaçlo onde eu tenho que editar da segu
 
 ### **Claude** (claude-sonnet-5-5) · 2026-11-15 03:40:49 UTC
 
-Cole o conteúdo abaixo no `entrega/README-ENTREGA.md` e substitua cada trecho `<< ... >>` pelo seu texto. Apague o `<< >>` junto, sem deixar sobra. As partes fora dos `<< >>` já são fatos confirmados na nossa conversa.
+Cole o conteúdo abaixo no `../README-ENTREGA.md` e substitua cada trecho `<< ... >>` pelo seu texto. Apague o `<< >>` junto, sem deixar sobra. As partes fora dos `<< >>` já são fatos confirmados na nossa conversa.
 
 ````markdown
 # Entrega: Consolidador de reservas de hotel
@@ -11557,7 +11557,7 @@ git commit -m "Adiciona documentação de entrega" -m "README-ENTREGA, declaraç
 git push origin main
 ```
 
-O `git status` antes do commit deve mostrar só arquivos dentro de `entrega/`.
+O `git status` antes do commit deve mostrar só arquivos dentro de `..`.
 
 Resumo da ordem: o `declaracao.md` agora, o README-ENTREGA fechado, e depois eu gero o `sessao.md` definitivo.
 
@@ -11629,7 +11629,7 @@ Pode commitar agora. O README-ENTREGA não precisa estar perfeito para ir ao Git
 git status
 ```
 
-Deve aparecer **só** `entrega/` em "Untracked files" (o `README-ENTREGA.md` é novo). Se aparecer qualquer outra coisa, me avise antes de continuar.
+Deve aparecer **só** `..` em "Untracked files" (o `README-ENTREGA.md` é novo). Se aparecer qualquer outra coisa, me avise antes de continuar.
 
 ## Passo 2: adicionar só esse arquivo
 
@@ -11657,7 +11657,7 @@ git log --oneline
 
 Se aparecer o aviso `LF will be replaced by CRLF`, ignore (é o mesmo de antes).
 
-Cole aqui a saída do `git status` do passo 1 e a do `git log --oneline` no fim. Depois, no navegador, abra `https://github.com/mvmmoreira/onfly-desafio-reservas/tree/main/entrega` e confirme que o `README-ENTREGA.md` aparece lá. É assim que a gente sabe que subiu.
+Cole aqui a saída do `git status` do passo 1 e a do `git log --oneline` no fim. Depois, no navegador, abra `https://github.com/mvmmoreira/onfly-desafio-reservas/tree/main/entrega` e confirme que o `../README-ENTREGA.md` aparece lá. É assim que a gente sabe que subiu.
 
 ### **Marcos** · 2026-11-15 05:20:23 UTC
 
